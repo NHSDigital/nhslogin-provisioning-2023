@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Tell us your NHS number
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+  
+    <div class="nhsuk-grid-column-two-thirds">
+    
+
+    
+                <h1>
+              Tell us your NHS number
+            </h1>
+
+      <form action="{{ thisPage }}" method="post">
+
+ 
+      <div class="nhsuk-form-group">
+      
+          <label class="nhsuk-label" for="securityCodes">
+            NHS number
+          </label>
+          <span class="nhsuk-hint" id="input-with-hint-text-hint">
+            Your NHS number is a 10 digit number, like 485 777 3456.
+          </span>
+            <input class="nhsuk-input nhsuk-input--width-10" id="nhsnumber" name="nhsnumber" type="number" aria-describedby="nhsnumber" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
+          </div>
+            
+
+          <input id="phoneNumber" name="phoneNumber" value="07500078214" type="hidden">
+
+                  <button class="nhsuk-button">Continue</button>
+                  </form>
+
+
+      {{ details({
+        "text": "Where can I find my NHS number?",
+        "HTML": "
+        <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
+  <p>You can find your NHS number on any document sent to you by the NHS. This may include:</p>
+  <ul>
+    <li>prescriptions</li>
+    <li>test results</li>
+    <li>hospital referral letters</li>
+    <li>appointment letters</li>
+    <li>your NHS medical card</li>
+  </ul>
+  <p>Ask your GP practice for help if you can't find your NHS number.</p>
+  "
+}) }}
+
+    </div>  
+  </div>
+{% endblock %}
+
+
+ 
+

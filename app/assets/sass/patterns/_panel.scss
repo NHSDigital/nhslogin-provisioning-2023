@@ -1,0 +1,149 @@
+/* ==========================================================================
+   COMPONENTS / #PANEL
+   ========================================================================== */
+.nhsuk-panel {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 24px;
+  background-color: #ffffff;
+  color: #212b32;
+  width: 100%;
+}
+
+.nhsuk-panel > *:first-child {
+  margin-top: 0;
+}
+
+.nhsuk-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-panel {
+    margin-bottom: 48px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-panel {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-panel {
+    padding: 32px;
+  }
+}
+
+@media print {
+  .nhsuk-panel {
+    border: 1px solid #212b32;
+    page-break-inside: avoid;
+  }
+}
+
+/* Panel colour variant
+   ========================================================================== */
+.nhsuk-panel--grey {
+  background-color: #f0f4f5;
+}
+
+/* Panel with label
+   ========================================================================== */
+.nhsuk-panel-with-label {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 24px;
+  background-color: #ffffff;
+  color: #212b32;
+  padding-top: 0 !important;
+}
+
+.nhsuk-panel-with-label > *:first-child {
+  margin-top: 0;
+}
+
+.nhsuk-panel-with-label > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-panel-with-label {
+    margin-bottom: 48px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-panel-with-label {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-panel-with-label {
+    padding: 32px;
+  }
+}
+
+@media print {
+  .nhsuk-panel-with-label {
+    border: 1px solid #212b32;
+    page-break-inside: avoid;
+  }
+}
+
+.nhsuk-panel-with-label__label {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  background-color: #005eb8;
+  color: #ffffff;
+  display: inline-block;
+  margin: 0 -32px 8px;
+  padding: 8px 32px;
+  position: relative;
+  top: -16px;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-panel-with-label__label {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.33333;
+  }
+}
+
+@media print {
+  .nhsuk-panel-with-label__label {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .nhsuk-panel-with-label__label {
+    margin-left: -24px;
+    margin-right: -24px;
+    padding: 8px 24px;
+    top: -8px;
+  }
+}
+
+@media print {
+  .nhsuk-panel-with-label__label {
+    background: none;
+    color: #212b32;
+    top: 0;
+  }
+}
+
+@media print {
+  .nhsuk-panel-with-label__label {
+    color: #212b32;
+    fill: #212b32;
+  }
+  .nhsuk-panel-with-label__label:active, .nhsuk-panel-with-label__label:focus, .nhsuk-panel-with-label__label:visited {
+    color: #212b32;
+  }
+}

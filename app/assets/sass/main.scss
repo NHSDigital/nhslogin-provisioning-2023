@@ -1,0 +1,168 @@
+// Import NHS.UK frontend library
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+
+// Components that are not in the NHS.UK frontend library
+@import 'components/panel-confirmation';
+@import 'components/related-nav';
+@import 'components/list-border';
+@import 'components/spinner';
+@import 'components/button-spinner';
+
+
+///////////////////////////////////////////
+// Add your custom CSS/Sass styles below... 
+///////////////////////////////////////////
+
+@import 'patterns/related-items';
+@import 'patterns/panel';
+@import 'patterns/panel-group';
+
+.body-email {
+	background-color: #d8dde0;
+}
+
+.email-width {
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.email-width .nhsuk-width-container {
+	max-width: 550px;
+}
+
+.body-email .nhsuk-footer .nhsuk-width-container{
+	display: none;
+}
+
+
+// R&D tracker specific css //
+
+.nhsuk-panel__title {
+    margin-bottom: 10px;
+}
+
+.custom-card-green {
+    background-color: #007f3b;
+    color: #FFF;
+    text-align: left;
+    .custom-card-small-text {
+        font-size: 24px;
+    }
+    .custom-card-large-text {
+        font-size: 80px;
+    }
+}
+
+.custom-card-yellow {
+    background-color: #ffeb3b;
+    // color: $nhsuk-text-colour;
+    text-align: left;
+    .custom-card-small-text {
+        font-size: 24px;
+    }
+    .custom-card-large-text {
+        font-size: 80px;
+    }
+}
+
+.custom-card-red {
+    background-color: #d5281b;
+    color: #FFF;
+    text-align: left;
+    .custom-card-small-text {
+        font-size: 24px;
+    }
+    .custom-card-large-text {
+        font-size: 80px;
+    }
+}
+
+.nhsuk-grid-column-one-half {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nhsuk-details {
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+}
+
+
+strong.nhsuk-tag {
+    &.tag-signed-off {
+	background: #007f3b;
+    padding: 2px 12px 5px 12px;
+    border-radius: 6px;
+    font: small-caption;
+    font-variant-caps: all-small-caps;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    }
+    &.tag-awaiting-sign-off {
+		background: #ffeb3b;
+		padding: 2px 12px 5px 12px;
+		border-radius: 6px;
+		font: small-caption;
+		font-variant-caps: all-small-caps;
+		font-weight: 600;
+		font-size: 14px;
+		color: black;
+      }
+    &.tag-flagged {
+		background: #d5281b;
+		padding: 2px 12px 5px 12px;
+		border-radius: 6px;
+		font: small-caption;
+		font-variant-caps: all-small-caps;
+		font-weight: 600;
+		font-size: 14px;
+		color: white;
+	  }
+	  
+	  &.tag-green-tag {
+		background: #007f3b;
+		padding: 2px 12px 5px 12px;
+		border-radius: 6px;
+		font: small-caption;
+		font-variant-caps: all-small-caps;
+		font-weight: 600;
+		font-size: 14px;
+		color: white;
+		}
+		&.tag-yellow-tag {
+			background: #ffeb3b;
+			padding: 2px 12px 5px 12px;
+			border-radius: 6px;
+			font: small-caption;
+			font-variant-caps: all-small-caps;
+			font-weight: 600;
+			font-size: 14px;
+			color: black;
+		  }
+		&.tag-red-tag {
+			background: #d5281b;
+			padding: 2px 12px 5px 12px;
+			border-radius: 6px;
+			font: small-caption;
+			font-variant-caps: all-small-caps;
+			font-weight: 600;
+			font-size: 14px;
+			color: white;
+		  }
+   }
+
+.nhsuk-header--transactional .nhsuk-header__transactional-service-name {
+	width: auto;
+	padding-left: 16px;
+	padding-top: 3px;
+}
+
+@media (min-width: 61.875em) {
+	.nhsuk-header--transactional .nhsuk-header__transactional-service-name {
+		width: auto;
+		padding-left: 16px;
+		padding-top: 3px;
+	}
+}

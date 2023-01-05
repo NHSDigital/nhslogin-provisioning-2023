@@ -1,0 +1,54 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Check your phone
+
+{% endblock %}
+
+{% block topRow %}
+{% if resend === "yes" %}
+{% import "layouts/_callout.html" as callout %}
+{{ callout.pattern('','Your security code has been resent.','attention') }}
+{% endif %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+  
+    <div class="nhsuk-grid-column-two-thirds">
+    
+        <h1>Check your phone</h1>
+
+        <p>Enter the 6 digit security code that we have sent to *******8209.</p>
+
+        <p>This is the phone number that is registered with your GP surgery.</p>
+
+       <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="securityCodes">
+          Security code
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
+        </div>
+
+<a href="passwordset" role="button" draggable="false" class="nhsuk-button">
+  Continue
+</a>
+
+      <p>If you do not recognise this phone number or do not have access to your phone, you will need to update your records with your GP.</p>
+</div>
+
+{% endblock %}
+
+
+ 
+

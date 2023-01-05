@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% from 'button/macro.njk' import button %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block pageTitle %}
+Confirm details
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+Step 5 of 5
+<br>
+Confirm details    </h1>
+
+      <form method="post" action="success">
+
+      <p>Pass to the user, get them to review and confirm the details</p>
+
+<p>insert tick box or similar - I agree these details are my correct details</p>
+
+        <button class="nhsuk-button full-width" type="submit">
+          Continue
+        </button>
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

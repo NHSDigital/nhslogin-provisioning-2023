@@ -1,0 +1,371 @@
+
+
+{% extends "layout.html" %}
+
+  {% block pageTitle %}
+    Research and design tracker
+  {% endblock %}
+
+
+    {# ARRAY START #}
+
+
+  {% set items = [
+
+
+    { page: 'Create account', id: 'v1/overview', link: 'createaccount/v1/overview', name: 'Overview', ur_confidence: 'Medium', ur_status: 'Started', sign_off_status: 'iteration needed', css_class: 'flagged' },
+
+    { page: 'Create account', id: 'v1/email/invite', link: 'createaccount/v1/email/invite', name: 'Invite (email)', ur_confidence: 'Medium', ur_status: 'Started', sign_off_status: 'iteration needed', css_class: 'flagged' },
+
+    { page: 'Create account', id: 'v1/setup/spinner', link: 'createaccount/v1/setup/spinner', name: 'Spinner', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+
+    { page: 'Error', id: 'v1/error/generic', link: 'createaccount/v1/error/generic', name: 'Generic', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
+    { page: 'Error', id: 'v1/error/expired', link: 'createaccount/v1/error/expired', name: 'Expired', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
+    { page: 'Create account', id: 'v1/setup/verification', link: 'createaccount/v1/setup/verification', name: 'Verification', ur_confidence: 'Low', ur_status: 'Started', sign_off_status: 'iteration needed', css_class: 'flagged' },
+
+    { page: 'Error', id: 'v1/error/verification-wrong', link: 'createaccount/v1/error/verification-wrong', name: 'Verification wrong', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
+    { page: 'Error', id: 'v1/error/verification-too-many-attempts', link: 'createaccount/v1/error/verification-too-many-attempts', name: 'Verification too many attempts', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
+    { page: 'Create account', id: 'v1/setup/otp', link: 'createaccount/v1/setup/otp', name: 'OTP', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+
+    { page: 'Error', id: 'v1/error/otp-wrong', link: 'createaccount/v1/error/otp-wrong', name: 'OTP wrong', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
+    { page: 'Error', id: 'v1/error/otp-too-many-attempts', link: 'createaccount/v1/error/otp-too-many-attempts', name: 'OTP too many attempts', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' },
+
+    { page: 'Create account', id: 'v1/setup/passwordset', link: 'createaccount/v1/setup/passwordset', name: 'Password set', ur_confidence: 'High', ur_status: 'Sufficient', sign_off_status: 'signed-off', css_class: 'signed-off' },
+
+    { page: 'Create account', id: 'v1/setup/success', link: 'createaccount/v1/setup/success', name: 'Success', ur_confidence: 'Low', ur_status: 'Started', sign_off_status: 'iteration needed', css_class: 'flagged' },
+
+    { page: 'Create account', id: 'v1/email/success', link: 'createaccount/v1/email/success', name: 'Success (email)', ur_confidence: 'Low', ur_status: 'Started', sign_off_status: 'iteration needed', css_class: 'flagged' },
+
+    { page: 'Uplift', id: 'v1/email/upliftsuccess', link: 'createaccount/v1/email/upliftsuccess', name: 'Success (email)', ur_confidence: 'Low', ur_status: 'Not-started', sign_off_status: 'awaiting-sign-off', css_class: 'awaiting-sign-off' }
+
+
+
+
+
+
+  ] %}
+
+  {# ARRAY FINISH #}
+
+{% block content %}
+
+<!-- Main Body Content START -->
+
+
+    <div class="nhsuk-grid-row">
+
+
+      <!--
+
+        Hero Section
+
+        This section includes:
+
+          1. The title to the page
+          2. The lead text,
+          3. A link to a seperate page containing your teams sign-off process
+          4. Quick links to the most used documents / prototypes etc.
+
+      -->
+
+{#       <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-l">Design and Research Tracker</h1>
+        <p class="nhsuk-body-l">This area is used as a brief explanation of the tracker and its purpose.</p>
+        <a href="#" class="nhsuk-link">View our sign off process</a>
+
+      </div>
+
+      <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-!-padding-bottom-2"></div>
+        <h1 class="nhsuk-heading-s">Quick links</h1> #}
+
+        <!--
+
+          Types of Quick links:
+
+          1. Links that require a username and password - Details GOV.UK component used (https://design-system.service.gov.uk/components/details/)
+          2. Links that do not require authentication - Normal GOV.UK link component used (https://design-system.service.gov.uk/styles/typography/#links)
+
+        -->
+
+{#         <details class="nhsuk-details" data-module="nhsuk-details" style="margin-left: 5px;">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Prototype link
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <a href="#" class="nhsuk-link">Link to the prototype goes here</a>
+            <div class="nhsuk-!-padding-bottom-4"></div>
+            <p class="nhsuk-body">Username: </p>
+            <p class="nhsuk-body">Password: </p>
+          </div>
+        </details>
+
+        <div class="nhsuk-!-padding-bottom-2"></div>
+        <a href="#" class="nhsuk-link" style="margin-left: 30px;">Link to DevOps or Jira</a>
+      </div> #}
+
+      <!--
+
+        Divider
+
+      -->
+
+{#       <div class="nhsuk-grid-column-full">
+        <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+      </div> #}
+
+      <!--
+
+        Hero Section FINISHES here
+
+      -->
+
+    </div>
+
+    <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-!-padding-bottom-3"></div>
+
+      <!-- Signed-off -->
+
+      <div class="nhsuk-grid-column-one-third" style="padding-left: 15px;">
+        <div class="nhsuk-panel nhsuk-panel custom-card-green">
+          <h1 class="nhsuk-panel__title custom-card-large-text">
+            <div class="nhsuk-panel__body custom-card-small-text">
+              Signed-off
+            </div>
+            <div class="nhsuk-!-padding-bottom-5"></div>
+            3
+          </h1>
+        </div>
+      </div>
+
+      <!-- Awaiting Sign-off -->
+
+      <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-panel nhsuk-panel custom-card-yellow">
+          <div class="nhsuk-panel__body custom-card-small-text">
+            Awaiting sign-off
+          </div>
+          <div class="nhsuk-!-padding-bottom-5"></div>
+          <h1 class="nhsuk-panel__title custom-card-large-text">
+            7
+          </h1>
+        </div>
+      </div>
+
+      <!-- Flagged -->
+
+      <div class="nhsuk-grid-column-one-third">
+        <div class="nhsuk-panel nhsuk-panel custom-card-red">
+            <div class="nhsuk-panel__body custom-card-small-text">
+              Flagged
+            </div>
+          <div class="nhsuk-!-padding-bottom-5"></div>
+          <h1 class="nhsuk-panel__title custom-card-large-text">
+            5
+          </h1>
+        </div>
+        <div class="nhsuk-!-padding-bottom-7"></div>
+      </div>
+
+      <!-- Filter Table -->
+
+      {# This is where we wrap everything in a <form> tag and post it back to itself e.g. /index #}
+
+      <form action="index" method="POST" role="form" style="padding-left: 15px;">
+
+        <div class="nhsuk-grid-column-full">
+
+          <div class="nhsuk-grid-row filters-bar">
+
+            {# Selectors #}
+
+            {# This is the 'filters bar' #}
+            {# All you really need to care about is the <select> #}
+            {# Notice the name of the <select> is what will be available to us later as data.filter_page  #}
+
+            <!-- Page DropDown -->
+
+            {# <div class="nhsuk-form-group nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop"> #}
+            <div class="nhsuk-form-group nhsuk-grid-column-one-quarter">
+
+              <!-- Filter selector for Page -->
+
+              <label class="nhsuk-label" for="filter_page">Page type</label>
+
+              <select class="nhsuk-select" id="filter_page" name="filter_page" style="width: 150px;">
+
+                <!-- This is the default option in the drop down -->
+
+                <option value="all" {% if not data.filter_page or data.filter_page == 'all' or data.filter == 'reset' %}selected{% endif %}>All</option>
+
+                <!-- These are the rest of the options within the Page dropdown -->
+
+                <option value="Create account" {% if data.filter_page == 'Create account' and data.filter != 'reset' %}selected{% endif %}>Create account</option>
+                <option value="Uplift" {% if data.filter_page == 'Uplift' and data.filter != 'reset' %}selected{% endif %}>Uplift</option>
+                <option value="Provisioning interface" {% if data.filter_page == 'Provisioning interface' and data.filter != 'reset' %}selected{% endif %}>Provisioning interface</option>
+                <option value="Error" {% if data.filter_page == 'Error' and data.filter != 'reset' %}selected{% endif %}>Error</option>
+
+              </select>
+
+            </div>
+
+            <!-- UR Confidence DropDown -->
+
+            <div class="nhsuk-form-group nhsuk-grid-column-one-quarter">
+
+              <label class="nhsuk-label" for="filter_ur_confidence">UR confidence</label>
+
+              <select class="nhsuk-select" id="filter_ur_confidence" name="filter_ur_confidence" style="width: 150px;">
+
+                <!-- This is the default option in the drop down -->
+
+                <option value="all" {% if not data.filter_ur_confidence or data.filter_ur_confidence == 'all' or data.filter == 'reset' %}selected{% endif %}>All</option>
+
+                <!-- These are the rest of the options within the Page dropdown -->
+
+                <option value="High" {% if data.filter_ur_confidence == 'High' and data.filter != 'reset' %}selected{% endif %}>High</option>
+                <option value="Medium" {% if data.filter_ur_confidence == 'Medium' and data.filter != 'reset' %}selected{% endif %}>Medium</option>
+                <option value="Low" {% if data.filter_ur_confidence == 'Low' and data.filter != 'reset' %}selected{% endif %}>Low</option>
+
+              </select>
+
+            </div>
+
+            <!-- UR Status DropDown -->
+
+            <div class="nhsuk-form-group nhsuk-grid-column-one-quarter">
+
+              <label class="nhsuk-label" for="filter_ur_status">UR status</label>
+
+              <select class="nhsuk-select" id="filter_ur_status" name="filter_ur_status" style="width: 150px;">
+
+              <!-- This is the default option in the drop down -->
+
+              <option value="all" {% if not data.filter_ur_status or data.filter_ur_status == 'all' or data.filter == 'reset' %}selected{% endif %}>All</option>
+
+                <!-- These are the rest of the options within the Page dropdown -->
+
+                <option value="Not-started" {% if data.filter_ur_status == 'Not-started' and data.filter != 'reset' %}selected{% endif %}>Not started</option>
+                <option value="Ongoing" {% if data.filter_ur_status == 'Ongoing' and data.filter != 'reset' %}selected{% endif %}>Ongoing</option>
+                <option value="Sufficient" {% if data.filter_ur_status == 'Sufficient' and data.filter != 'reset' %}selected{% endif %}>Sufficient</option>
+
+              </select>
+
+            </div>
+
+            <!-- Sign-off status DropDown -->
+
+            <div class="nhsuk-form-group nhsuk-grid-column-one-quarter">
+
+              <label class="nhsuk-label" for="filter_sign_off_status">Sign-off status</label>
+
+              <select class="nhsuk-select" id="filter_sign_off_status" name="filter_sign_off_status" style="width: 150px;">
+
+              <!-- This is the default option in the drop down -->
+
+              <option value="all" {% if not data.filter_sign_off_status or data.filter_sign_off_status == 'all' or data.filter == 'reset' %}selected{% endif %}>All</option>
+
+                <!-- These are the rest of the options within the Page dropdown -->
+
+                <option value="awaiting-sign-off" {% if data.filter_sign_off_status == 'awaiting-sign-off' and data.filter != 'reset' %}selected{% endif %}>Awaiting sign-off</option>
+                <option value="flagged" {% if data.filter_sign_off_status == 'flagged' and data.filter != 'reset' %}selected{% endif %}>Flagged</option>
+                <option value="signed-off" {% if data.filter_sign_off_status == 'signed-off' and data.filter != 'reset' %}selected{% endif %}>Signed-off</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <div class="nhsuk-grid-column-one-half nhsuk-grid-column-one-quarter-from-desktop" style="margin-left: -15px;">
+            <div class="nhsuk-!-padding-bottom-4"></div>
+            <label class="nhsuk-label">&nbsp;</label>
+            <button class="nhsuk-button" data-module="nhsuk-button" name="filter" value="update">Update</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" name="filter"
+              value="reset">Reset</button>
+          </div>
+
+        </div>
+
+        <div class="nhsuk-grid-column-full">
+
+          {# Items table #}
+
+          {% if not hide_table %}
+
+          <table class="nhsuk-table items all-items" style="margin: 30px -15px 30px -15px;">
+
+            <thead class="nhsuk-table__head">
+
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Page type</th>
+                <th class="nhsuk-table__header" scope="col">Page</th>
+                <th class="nhsuk-table__header" scope="col">UR confidence</th>
+                <th class="nhsuk-table__header" scope="col">UR status</th>
+                <th class="nhsuk-table__header" scope="col">Sign-off status</th>
+                
+              </tr>
+
+            </thead>
+
+            <tbody class="nhsuk-table__body">
+
+              {# Loop through our dataset (array) called items and handle each 'item' at a time... #}
+
+              {% for item in items %}
+
+              {# If data.filter_type is not set #}
+              {# Or if the value of data.filter_type is 'all' #}
+              {# Or if the current item's type is equal to the value of data.filter_type #}
+              {# Or if the current item's interaction is equal to the value of data.filter_type #}
+              {# Then go ahead and show the item - using some of the attributes from the data to make each item dynamic #}
+
+                {% if not data.filter_page or data.filter_page == 'all' or item.page == data.filter_page or data.filter == 'reset' %}
+
+                  {% if not data.filter_ur_confidence or data.filter_ur_confidence == 'all' or item.ur_confidence == data.filter_ur_confidence or data.filter == 'reset' %}
+
+                    {% if not data.filter_ur_status or data.filter_ur_status == 'all' or item.ur_status == data.filter_ur_status or data.filter == 'reset' %}
+
+                      {% if not data.filter_sign_off_status or data.filter_sign_off_status == 'all' or item.sign_off_status == data.filter_sign_off_status or data.filter == 'reset' %}
+
+                        <tr id="item-{{ item.id }}" class="nhsuk-table__row">
+                          <td class="nhsuk-table__cell">{{ item.page }}</td>
+                          <td class="nhsuk-table__cell"><a href="/rdtracker/{{ item.id }}">{{ item.name }}</a></td>
+                          <td class="nhsuk-table__cell">{{ item.ur_confidence }}</td>
+                          <td class="nhsuk-table__cell">{{ item.ur_status }}</td>
+                          <td class="nhsuk-table__cell" style="width: 190px;"><strong class="nhsuk-tag tag-{{ item.css_class }}">{{ item.sign_off_status }}</strong></td>
+                        </tr>
+
+                      {% endif %} <!-- /. data.filter_sign_off_status -->
+
+                    {% endif %} <!-- /. data.filter_ur_status -->
+
+                  {% endif %} <!-- /. data.filter_ur_confidence -->
+
+                {% endif %} <!-- /. data.filter_page -->
+
+              {% endfor %} <!-- /. forLoop -->
+
+            </tbody>
+
+          </table>
+
+          {% endif %} <!-- /. if not hide_table-->
+
+        </div>
+      </div>
+    </div>
+  </form>
+</main>
+
+{% endblock %}

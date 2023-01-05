@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% from 'button/macro.njk' import button %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block pageTitle %}
+Take a photo of their ID
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+Step 4 of 5
+<br>
+Take a photo of their ID       </h1>
+
+      <form method="post" action="id-2">
+
+      <p>Advice about how to take a good photo of their ID...</p>
+
+
+        <button class="nhsuk-button full-width" type="submit">
+          Continue
+        </button>
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

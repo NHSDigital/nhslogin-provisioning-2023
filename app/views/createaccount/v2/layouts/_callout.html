@@ -1,0 +1,7 @@
+{% macro pattern(title='Callout Title', text='Callout text', modifier='attention') %}
+{# available modifiers 'muted','info','attention','warning','alert','severe','error','compact' #}
+<div class="callout callout--{{modifier}}">
+  {% if title %}<h3>{{ title }}</h3>{% endif %}
+  {% if text %}<p>{{ text|safe }}</p>{% endif %}
+</div>
+{% endmacro %}

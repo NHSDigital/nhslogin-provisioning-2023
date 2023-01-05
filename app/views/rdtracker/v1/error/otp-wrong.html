@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Research and design tracker - Error: OTP wrong
+{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="nhsuk-grid-row">
+
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+    <div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="http://provisioning.herokuapp.com/rdtracker/index">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Research and design tracker home</a>
+    </div>
+
+
+        <br>
+        <br>
+
+        <h1 class="nhsuk-heading-xl">
+            <span class="nhsuk-caption-m">Error</span>
+            OTP wrong
+        </h1>
+
+        <!--
+            Main Content Start
+        -->
+
+        <img src="/images/wireframe/create-account/error-otp-wrong.jpg" class="img-responsive" width="100%"
+            alt="A wireframe of the flow with current page highlighted in yellow.">
+        <p class="nhsuk-body nhsuk-!-font-size-14">A wireframe of the flow with current page highlighted in yellow.</p>
+        <img src="/images/screenshot/create-account/error-otp-wrong.png" class="img-responsive" width="50%"
+            alt="A screenshot from the prototype.">
+        <p class="nhsuk-body nhsuk-!-font-size-14">A screenshot from the prototype.</p>
+
+<br>
+        <!-- User Research Findings -->
+
+        <h3 class="nhsuk-heading-m" id="workingForUsers">What's working for users?</h3>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>-</li>
+        </ul>
+
+        <h3 class="nhsuk-heading-m" id="notWorkingForUsers">What isn't working for users?</h3>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>-</li>
+        </ul>
+
+        <h3 class="nhsuk-heading-m" id="nextSteps">Next steps</h3>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>-</li>
+        </ul>
+
+        <h3 class="nhsuk-heading-m" id="nextSteps">View detailed research insights</h3>
+        <ul class="nhsuk-list">
+            <li>
+                <a class="nhsuk-link" href="#" target="_blank">Example link</a>
+            </li>
+        </ul>
+        <br><br><br><br>
+
+
+    </div>
+    
+<!-- Status column on right -->
+
+    <div class="nhsuk-grid-column-one-third">
+        <br><br><br><br>
+
+        <!-- UR Confidence -->
+        <div class="nhsuk-heading-s" style="margin-bottom: 6px;" style="margin-top: 20px;">UR confidence</div>
+        <strong class="nhsuk-tag tag-red-tag">Low</strong>
+        <div class="nhsuk-!-padding-2"></div>
+        <br>
+        <!-- UR Status -->
+        <div class="nhsuk-heading-s" style="margin-bottom: 6px;" style="margin-top: 20px;">UR status</div>
+        <strong class="nhsuk-tag tag-red-tag">Not started</strong>
+        <div class="nhsuk-!-padding-2"></div>
+        <br>
+        <!-- Sign-Off Status -->
+        <div class="nhsuk-heading-s" style="margin-bottom: 6px;" style="margin-top: 20px;">Sign-off status</div>
+        <strong class="nhsuk-tag tag-yellow-tag">Awaiting-sign-off</strong>
+        <div class="nhsuk-!-padding-2"></div>
+    </div>
+
+
+        <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+            <li class="nhsuk-pagination-item--previous">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="../setup/otp">
+                <span class="nhsuk-pagination__title">Previous</span>
+                <span class="nhsuk-u-visually-hidden">:</span>
+                <span class="nhsuk-pagination__page">OTP</span>
+                <svg class="nhsuk-icon nhsuk-icon__arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.1 12.3l2.7 3c.2.2.5.2.7 0 .1-.1.1-.2.1-.3v-2h11c.6 0 1-.4 1-1s-.4-1-1-1h-11V9c0-.2-.1-.4-.3-.5h-.2c-.1 0-.3.1-.4.2l-2.7 3c0 .2 0 .4.1.6z"></path>
+                </svg>
+            </a>
+            </li>
+            <li class="nhsuk-pagination-item--next">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="../error/otp-too-many-attempts">
+                <span class="nhsuk-pagination__title">Next</span>
+                <span class="nhsuk-u-visually-hidden">:</span>
+                <span class="nhsuk-pagination__page">OTP too many attempts (error)</span>
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
+                </svg>
+            </a>
+            </li>
+        </ul>
+        </nav>
+
+</div>
+
+<script>
+    var toToplink = document.getElementById("toTopLink");
+
+    // When a user clicks the link, they will go back to the top of the current page they are on
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+{% endblock %}

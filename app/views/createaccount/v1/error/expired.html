@@ -1,0 +1,57 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Your invite has expired
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Your invite has expired</h1>  
+
+
+            <p>This could be because:
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>you received it more than 7 days ago</li>
+            <li>you have already set up an NHS login</li>
+          </ul>
+      </p>
+      
+      <p>
+      If you received your invite more than 7 days ago, it has expired and will no longer work. If you want to set up an NHS login, you will need to ask your GP to send a new invite. When they send you a new one, delete the previous email and respond to the invite from the new email.
+      </p>
+
+      <p>
+      If you have already set up an NHS login you can use it to access health and care apps or websites, or wherever you see the NHS login button. 
+      </p>
+
+      <p>Reference: <b>CID####</b></p>
+
+
+    </div>  
+  </div>
+    </div>
+  </div>  
+{% endblock %}

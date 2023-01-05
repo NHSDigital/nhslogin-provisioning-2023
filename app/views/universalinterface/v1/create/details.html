@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% from 'button/macro.njk' import button %}
+{% from 'back-link/macro.njk' import backLink %}
+
+{% block pageTitle %}
+  Enter the user's mobile phone number
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+Step 2 of 5
+<br>
+Some details about the user        </h1>
+
+      <p></p>
+
+      <form method="post" action="photo-1">
+        
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-with-hint-text">
+            Mobile number
+          </label>
+          <span class="nhsuk-hint" id="input-with-hint-text-hint">
+            <p>You must enter a UK mobile phone number.</p>
+          </span>
+          <input class="nhsuk-input nhsuk-input--width-20" id="phoneNumber" value="{{ data['phoneNumber'] }}" name="phoneNumber" type="number" aria-describedby="enter-your-mobile-number">
+        </div>
+
+        <button class="nhsuk-button full-width" type="submit">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

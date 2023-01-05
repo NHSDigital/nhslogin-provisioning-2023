@@ -1,0 +1,50 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Step 1: Search for any accounts already
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="details" method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+Step 1 of 5
+<br>
+Search for any accounts already
+           </h1>
+          </legend>
+
+      <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="UserNHSnumber">
+            User NHS number
+          </label>
+            <input class="nhsuk-input nhsuk-input--width-10" id="UserNHSnumber" name="UserNHSnumber" value="{{ data['UserNHSnumber'] }}" type="number" aria-describedby="nhsnumber" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="UserEmail">
+              User email address
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="UserEmail" name="UserEmail" value="{{ data['UserEmail'] }}" type="text">
+          </div>
+
+        </fieldset>
+
+        <button class="nhsuk-button">Continue</button>
+      </form>
+    </div>  
+  </div>
+{% endblock %}

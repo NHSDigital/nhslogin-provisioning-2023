@@ -1,0 +1,45 @@
+/* Panel group
+   ========================================================================== */
+/**
+ * Panel group allows you to have a row of panels.
+ *
+ * 1. Flexbox is used to make each panel in a row the same height.
+ */
+.nhsuk-panel-group {
+  display: flex;
+  flex-wrap: wrap;
+  /* [1] */
+  margin-bottom: 32px;
+}
+
+@media (max-width: 48.0525em) {
+  .nhsuk-panel-group {
+    margin-bottom: 24px;
+  }
+}
+
+.nhsuk-panel-group__item {
+  display: flex;
+  /* [1] */
+}
+
+@media (max-width: 48.0525em) {
+  .nhsuk-panel-group__item {
+    flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 48.0525em) {
+  .nhsuk-panel-group__item {
+    margin-bottom: 24px;
+  }
+  .nhsuk-panel-group__item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.nhsuk-panel-group__item .nhsuk-panel {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+

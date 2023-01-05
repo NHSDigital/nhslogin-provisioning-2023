@@ -1,0 +1,30 @@
+{% extends '../layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  You now have an NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p><h1 class="nhsuk-fieldset__legend--l">
+       You now have an NHS login
+      </h1>
+      
+      <p>Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},</p>
+      
+      <p>You have successfully set up your NHS login.</p>
+
+      <p>You can use your NHS login to access health websites and apps whenever you see the NHS login button.</p>
+
+            <img src="/images/ContinueWith_Original.svg" width="300px">
+            <br>
+            <br>
+      
+      <p>If you have been advised to create an NHS login by your GP, speak to them about where you can use it.</p>
+      
+    </div>
+  </div>
+
+{% endblock %}
