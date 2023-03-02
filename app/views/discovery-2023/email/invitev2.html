@@ -1,0 +1,36 @@
+{% extends '../layouts/layout-email.html' %}
+
+{% block pageTitle %}
+  Invite to set up your NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p><h1 class="nhsuk-fieldset__legend--l">
+        Invite to set up your NHS login
+      </h1>
+      
+      <p>Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},</p>
+      <p>You have been invited to set up your NHS login. To do this, you will need to tell us your
+
+
+
+<p>
+You only need to set up your NHS login once. When you have done this, you will have 1 username and password.
+</p>
+
+<p>
+You can use this username and password to access a variety of digital health and care websites and apps. This means you do not need to create separate accounts to log into different services.  
+</p>
+
+      <p>This invite will expire in 7 days.</p>
+      
+      <p><a href="../spinner" class="nhsuk-button">Set up your NHS login</a>
+      
+      <p>Ignore this email if you do not want to set up an NHS login, or if you think this may have been sent in error.</p>
+    </div>
+  </div>
+
+{% endblock %}
