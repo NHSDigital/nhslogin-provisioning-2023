@@ -8,13 +8,10 @@ Account details reminder from NHS login
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <p><h1 class="nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__legend--l">
         Account details reminder from NHS login
       </h1>
       
-      <p>
-        Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
-      </p>
       <p class="nhsuk-body">
           You asked us to remind you of the email address used to create your existing NHS login account.
       </p>
@@ -32,9 +29,9 @@ Account details reminder from NHS login
               </li>
             </ul>
 
-      <p>This invite will expire in 7 days.</p>
+      <!--<p>This invite will expire in 7 days.</p>-->
       
-      <p><a href="../spinner" class="nhsuk-button">Set up your NHS login</a>
+      <p><a href="../spinner" class="nhsuk-button">Recover NHS login account</a>
       
         <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email - this is an automated message</div>
     </div>
