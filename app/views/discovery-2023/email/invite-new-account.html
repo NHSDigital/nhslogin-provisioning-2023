@@ -8,22 +8,46 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <p><h1 class="nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__legend--l">
         Invite to set up your NHS login
       </h1>
       
-      <p>Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},</p>
-      <p>You have been invited to set up your NHS login. To do this, you will need to tell us you`
-
       <p>
-      NHS login lets you access a variety of digital health and care websites and apps with just 1 username and password.
+        Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
+      </p>
+      <p>
+        This is an invitation to set up your NHS login.
+      </p>
+      <p>
+        Your account allows you to access a range of health and care websites and apps with one set of login details.
       </p>
 
-      <p>This invite will expire in 7 days.</p>
+      <h2 class="nhsuk-fieldset__legend--m">
+        To set up your account
+      </h2>
+
+      <p>
+        We need to send a 6 digit security code to the mobile phone number you used to register with your GP.
+      </p>
+
+      <p>You will also need to confirm your:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>
+          name
+        </li>
+        <li>
+          date of birth
+        </li>
+        <li>
+          NHS number
+        </li>
+      </ul>
+
+      <p>This invitation will expire on 20 March 2023.</p>
+
+      <a href="../create-account/spinner" class="nhsuk-button">Set up your NHS login</a>
       
-      <p><a href="../create-account/spinner" class="nhsuk-button">Set up your NHS login</a>
-      
-        <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email – this is an automated message</div>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email - this is an automated message</div>
     </div>
   </div>
 

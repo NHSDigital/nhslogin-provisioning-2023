@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  Invite to set up your NHS login
+Account details reminder from NHS login
 {% endblock %}
 
 {% block content %}
@@ -9,28 +9,34 @@
     <div class="nhsuk-grid-column-full">
 
       <p><h1 class="nhsuk-fieldset__legend--l">
-        Invite to set up your NHS login
+        Account details reminder from NHS login
       </h1>
       
-      <p>Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},</p>
-      <p>You have been invited to set up your NHS login. To do this, you will need to tell us your
-
       <p>
-      NHS login lets you access a variety of digital health and care websites and apps with just 1 username and password.
+        Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
+      </p>
+      <p class="nhsuk-body">
+          You asked us to remind you of the email address used to create your existing NHS login account.
+      </p>
+      <p class="nhsuk-body">
+          To access your existing account sign in using this email address.
       </p>
 
       <p>Help with NHS login:</p>
             <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>To change your NHS login details and password or delete your NHS login if you no longer want to use it, visit: <a href="https://settings.login.nhs.uk/">https://settings.login.nhs.uk/</a></li>
-            <li>If you have technical issues, visit the NHS login help centre: <a href="https://help.login.nhs.uk/">https://help.login.nhs.uk/</a> </li>
-            
+              <li>
+                To change your NHS login details and password or delete your NHS login if you no longer want to use it, visit: <a href="https://settings.login.nhs.uk/">https://settings.login.nhs.uk/</a>
+              </li>
+              <li>
+                If you have technical issues, visit the NHS login help centre: <a href="https://help.login.nhs.uk/">https://help.login.nhs.uk/</a>
+              </li>
             </ul>
 
       <p>This invite will expire in 7 days.</p>
       
       <p><a href="../spinner" class="nhsuk-button">Set up your NHS login</a>
       
-        <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email – this is an automated message</div>
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email - this is an automated message</div>
     </div>
   </div>
 
