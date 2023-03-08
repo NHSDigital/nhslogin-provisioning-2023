@@ -1,7 +1,7 @@
 {% extends '../layouts/layout-email.html' %}
 
 {% block pageTitle %}
-  Invite to set up your NHS login
+Finish settingt up your NHS login
 {% endblock %}
 
 {% block content %}
@@ -9,19 +9,23 @@
     <div class="nhsuk-grid-column-full">
 
       <p><h1 class="nhsuk-heading-l">
-        Invite to set up your NHS login
+        Finish setting up your NHS login
       </h1>
       
       <p class="nhsuk-body">
         Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
       </p>
-      
-      <p class="nhsuk-body">
-        You have been invited to set up your NHS login. To do this, you will need to tell us your
-      </p>
 
       <p class="nhsuk-body">
-        NHS login lets you access a variety of digital health and care websites and apps with just 1 username and password.
+        Your GP has connected you to your record and once you finish setting up yout account you should be able to access more features.
+      </p>
+
+      <h2 class="nhsuk-heading-m">
+        To finish setting up your account
+      </h2>
+
+      <p class="nhsuk-body">
+        We need to send a 6 digit security code to the mobile phone number you used to register with your GP.
       </p>
 
       <p class="nhsuk-body">Help with NHS login:
@@ -37,7 +41,7 @@
 
       <p class="nhsuk-body">This invite will expire in 7 days.</p>
       
-      <a href="../existing-uplift/spinner" class="nhsuk-button">Set up your NHS login</a>
+      <a href="../existing-uplift/spinner" class="nhsuk-button">Finish setting up your NHS login</a>
       
       <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email - this is an automated message</div>
 
