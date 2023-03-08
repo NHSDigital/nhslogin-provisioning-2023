@@ -13,34 +13,26 @@ Account details reminder from NHS login
       </h1>
 
       <p class="nhsuk-body">
-        Your GP asked us to remind you of the email address used to create your existing NHS login account.
+        Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
       </p>
-
-      <h2 class="nhsuk-heading-m">
-        Don't remember your password?
-      </h2>
 
       <p class="nhsuk-body">
-        If you cannot remember your password you can <a href="https://prototype-nhs-login.herokuapp.com/nhslogin/login/check-your-email">reset it</a>.
+        Your GP asked us to remind you of the email address used to create your NHS login account. 
+      </p>
+      <p>
+        We have sent this email to the address you used to create your account. 
       </p>
 
-      <h2 class="nhsuk-heading-m">
-        I do not have access to an old mobile number
-      </h2>
-
-      <p class="nhsuk-body">
-        If you do not have access to your mobile phone, <a href="https://prototype-nhs-login.herokuapp.com/nhslogin/login/login-enter-OTP#">you can change your mobile phone securely</a>.
+      <h2>Help with NHS login:</h2>
+      <p>
+        To change your NHS login details and password or delete your NHS login if you no longer want to use it, visit: <a href="https://settings.login.nhs.uk/">https://settings.login.nhs.uk/</a>
       </p>
-
-      <p>Help with NHS login:</p>
-            <ul class="nhsuk-list nhsuk-list--bullet">
-              <li>
-                To change your NHS login details and password or delete your NHS login if you no longer want to use it, visit: <a href="https://settings.login.nhs.uk/">https://settings.login.nhs.uk/</a>
-              </li>
-              <li>
-                If you have technical issues, visit the NHS login help centre: <a href="https://help.login.nhs.uk/">https://help.login.nhs.uk/</a>
-              </li>
-            </ul>
+      <p>
+        If you do not have access to the mobile phone you used to create your account, you can <a href="https://prototype-nhs-login.herokuapp.com/nhslogin/login/login-enter-OTP#">change the mobile phone number linked to it</a>. 
+      </p>
+      <p>
+        If you have technical issues, visit the NHS login help centre: <a href="https://help.login.nhs.uk/">https://help.login.nhs.uk/</a>
+      </p>
 
       <!--<p class="nhsuk-body">This invitation will expire on 20 March 2023.</p>-->
       

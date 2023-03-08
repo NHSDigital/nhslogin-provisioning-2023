@@ -13,7 +13,31 @@ Finish settingt up your NHS login
       </h1>
 
       <p class="nhsuk-body">
-        Your GP has connected you to your record and once you finish setting up yout account you should be able to access more features.
+        Dear {{ data.UserFirstName or 'Alice' }} {{ data.UserLastName or 'Smith' }},
+      </p>
+
+      <p class="nhsuk-body">
+        Your GP has linked your NHS record to your account.
+      </p>
+      <p>
+        We have given you full access to services that use NHS login. 
+      </p>
+
+      <p class="nhsuk-body">This means you can do things like: 
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>
+            view your GP health record 
+          </li>
+          <li>
+            manage appointments 
+          </li>
+          <li>
+            order repeat prescriptions 
+          </li>
+          <li>
+            download your NHS Covid Pass for travel abroad 
+          </li>          
+        </ul>
       </p>
 
       <h2 class="nhsuk-heading-m">
@@ -24,11 +48,27 @@ Finish settingt up your NHS login
         We need to send a 6 digit security code to the mobile phone number you used to register with your GP.
       </p>
 
+      <p class="nhsuk-body">You will also need to confirm your:
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>
+            name
+          </li>
+          <li>
+            date of birth
+          </li>
+          <li>
+            NHS number
+          </li>
+        </ul>
+      </p>
+
       <p class="nhsuk-body">This invitation will expire on 20 March 2023.</p>
       
       <a href="../existing-uplift/spinner" class="nhsuk-button">Finish setting up your NHS login</a>
+      <p><a href="https://help.login.nhs.uk/">https://settings.login.nhs.uk/</a></p>
 
-      <p class="nhsuk-body">Help with NHS login:
+      <h2 class="nhsuk-body">Help with NHS login</h2>
+      <p>
         <ul class="nhsuk-list nhsuk-list--bullet">
           <li>
             To change your NHS login details and password or delete your NHS login if you no longer want to use it, visit: <a href="https://settings.login.nhs.uk/">https://settings.login.nhs.uk/</a>
