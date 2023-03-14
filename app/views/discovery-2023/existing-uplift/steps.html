@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Set up a new NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {% if data.userIs === 'p0' %}
+
+      <form action="login-enter-password" method="post" class="form">
+        <fieldset class="nhsuk-fieldset">
+
+      {% endif %}
+      {% if data.userIs === 'p5' %}
+
+      <form action="confirm-my-details" method="post" class="form">
+        <fieldset class="nhsuk-fieldset">
+
+      {% endif %}
+          
+        
+          <div class="service-access-wrapper">
+            <ol class="service-access">
+                {% if data.userIs === 'p0' %}
+
+                <li class="service-access__item completed"> 
+                  <h3 class="service-access__item__title ticked" style="font-size:18px">You have created an account</h3>
+                  <div class="service-access__item__desc">	
+                  </div>	
+                </li> 
+
+                <li class="service-access__item active">
+                  <h3 class="service-access__item__title">Confirm your details</h3>
+                  <div class="service-access__item__desc">
+                    <p>Your GP has confirmed your identity, to add this to your account continue and enter your password.</p>
+                  </div>
+                  <form method="POST">
+                    <button class="nhsuk-button full-width" style="display:block; margin-bottom:0;">Continue</button>
+                  </form>
+
+                {% endif %}
+                {% if data.userIs === 'p5' %}
+
+                    <li class="service-access__item completed"> 
+                      <h3 class="service-access__item__title ticked" style="font-size:18px">You have created an account</h3>
+                      <div class="service-access__item__desc">	
+                      </div>	
+                    </li> 
+                    <li class="service-access__item completed"> 
+                      <h3 class="service-access__item__title ticked" style="font-size:18px">Matched to GP record</h3>
+                      <div class="service-access__item__desc">	
+                      </div>	
+                    </li> 
+
+                    <li class="service-access__item active">
+                      <h3 class="service-access__item__title">Confirm your details</h3>
+                      <div class="service-access__item__desc">
+                        <p>Your GP has confirmed your identity, to add this to your account continue and enter your password.</p>
+                        <p class="nhsuk-body">You will also need to confirm your:
+                          <ul class="nhsuk-list nhsuk-list--bullet">
+                            <li>
+                              name
+                            </li>
+                            <li>
+                              date of birth
+                            </li>
+                            <li>
+                              NHS number
+                            </li>
+                          </ul>
+                        </p>
+                      </div>
+                      <form method="POST">
+                        <button class="nhsuk-button full-width" style="display:block; margin-bottom:0;">Continue</button>
+                      </form>
+
+                {% endif %}
+              <!-- {% if data.p5active === 'off' %}
+              <li class="service-access__item active">	
+                <p class="service-access__item__title__text__leftandright"><strong>Next step</strong></p>
+                  <h3 class="service-access__item__title">Prove who you are</h3>
+                  <div class="service-access__item__desc">
+                    <p>You will need to send a photo of your ID and a recording of your face. This helps us match you to your NHS record and ensures that only you have access to your health information.</p>
+                  </div>
+              {% endif %} -->
+            </ol>
+          
+          </div>
+          
+        </fieldset>   
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}
+

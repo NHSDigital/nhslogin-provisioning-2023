@@ -1,0 +1,105 @@
+
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+		Check your email
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+
+<div class="service-access-wrapper">
+	<ol class="service-access">
+
+
+
+
+		{% if data.p0 === 'trueNow' %} 
+
+		<li class="service-access__item completed"> 
+			<h3 class="service-access__item__title ticked" style="font-size:18px">You have created an account</h3>
+			<div class="service-access__item__desc">	
+			</div>	
+		</li> 
+		
+		{% endif %}
+		
+		{% if data.p5 === 'trueNow' %} 
+		
+		<li class="service-access__item completed"> 
+			<h3 class="service-access__item__title ticked" style="font-size:18px">We have matched you to your NHS record</h3>
+			<div class="service-access__item__desc">	
+			</div>	
+		</li> 
+		
+		{% endif %}
+		
+		<li class="service-access__item completed"> 
+			<h3 class="service-access__item__title ticked" style="font-size:18px">Confirm details</h3>
+			<div class="service-access__item__desc">	
+			</div>	
+		</li> 
+
+<!-- 
+			<li class="service-access__item active">	
+				<h3 class="service-access__item__title">Please submit your information</h3>
+				<div class="service-access__item__desc">
+					<p>By selecting submit, you agree to send us your personal information, photo and video.</p>
+					<p><b>Do we need to add something like:</b> If you do not submit you will need to go through this all again...</p>
+					<p>Your data will be stored securely. Read our <a href="#">privacy notice</a> to find out what we will do with your data.</p>
+				</div>
+				<a>
+					<button data-redirect="service-access-complete{{ params }}" class="nhsuk-button service-access__item__button button" style="display:block; margin-bottom:0;"
+					  id="button--save">Submit information</button>
+				  </a>
+		</li> -->
+
+
+		<li class="service-access__item active">	
+			<h3 class="service-access__item__title">Check your email</h3>
+			<div class="service-access__item__desc">
+				<p>We will email you to let you know if your information passed our checks.</p>
+				<p>It may take up to <b>2 hours</b> for us to email you.				</p>
+				<p>Your data will be stored securely. Read our <a href="#">privacy notice</a> to find out what we will do with your data.</p>
+			</div>
+
+			</li>
+
+	</ol>
+
+
+
+</div>
+
+<script type="text/javascript">
+	submitSpinner()
+  
+	function buttonClicked(target) {
+	  target.setAttribute('disabled', 'disabled')
+	  target.className += ' button--save'
+	  setTimeout(function () {
+		window.location.href = target.dataset.redirect;
+	  }, 2000)
+	}
+  
+	function submitSpinner() {
+	  var selects = document.getElementById('button--save')
+	  selects.addEventListener('click', function (event) {
+		event.preventDefault()
+		if (selects.getAttribute('disabled') === 'disabled') {
+		  console.log('already clicked')
+		} else {
+		  event.preventDefault()
+		  console.log(selects.getAttribute('disabled'))
+		  buttonClicked(selects)
+		}
+	  })
+	}
+  </script>
+
+{% endblock %}
+
+{% block rightcol %}{% endblock %}
