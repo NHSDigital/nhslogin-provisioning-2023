@@ -8,9 +8,9 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <h1 class="nhsuk-heading-l">
-        Invite to set up your NHS login
-      </h1>
+      <h2 class="nhsuk-heading-m">
+        Subject: Invite to set up your NHS login
+      </h2>
       
       <p class="nhsuk-body">
         Dear {{ data.UserFirstName or 'Alex' }} {{ data.UserLastName or 'Taylor' }},
@@ -30,7 +30,7 @@
 
       <p class="nhsuk-body">You will also need to confirm your details.</p>
 
-      <p class="nhsuk-body">This invitation will expire in 7 days.</p>
+      <p class="nhsuk-body">This invitation will expire in <strong>7 days</strong>.</p>
 
       <a href="../create-account/spinner-set-up" target="_blank" class="nhsuk-button">Set up your NHS login</a>
       <p><a href="../create-account/spinner-set-up" target="_blank">https://settings.login.nhs.uk/</a></p>
