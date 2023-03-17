@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Confirm your details
+Next steps
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@ Confirm your details
 
 
 
-      <form action="otp" method="post" class="form">
+      <form action="password-set" method="post" class="form">
         <fieldset class="nhsuk-fieldset">
           
         
@@ -23,23 +23,22 @@ Confirm your details
                   <div class="service-access__item__desc">	
                   </div>	
                 </li> 
+                <li class="service-access__item completed"> 
+                  <h3 class="service-access__item__title ticked" style="font-size:18px">Get security code</h3>
+                  <div class="service-access__item__desc">	
+                  </div>	
+                </li> 
 
-                <li class="service-access__item active">
-                  <h3 class="service-access__item__title">Verify your account</h3>
+              <li class="service-access__item active">
+                  <p class="service-access__item__title__text__leftandright"><b>Next step</b></p>
+                  <h3 class="service-access__item__title">Finish setting up your NHS login</h3>
                   <div class="service-access__item__desc">
-                    <p>Your GP has confirmed your identity, to add this to your account continue and enter your password.</p>
+                    <p>Enter a password to finish setting up.</p>
                   </div>
                   <form method="POST">
                     <button class="nhsuk-button full-width" style="display:block; margin-bottom:0;">Continue</button>
                   </form>
-              <!-- {% if data.p5active === 'off' %}
-              <li class="service-access__item active">	
-                <p class="service-access__item__title__text__leftandright"><strong>Next step</strong></p>
-                  <h3 class="service-access__item__title">Prove who you are</h3>
-                  <div class="service-access__item__desc">
-                    <p>You will need to send a photo of your ID and a recording of your face. This helps us match you to your NHS record and ensures that only you have access to your health information.</p>
-                  </div>
-              {% endif %} -->
+              </li>
             </ol>
           
           </div>
