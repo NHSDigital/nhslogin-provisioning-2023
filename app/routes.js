@@ -110,6 +110,28 @@ router.post('/createaccount/v1/setup/passwordset', function (req, res) {
 
 
 
+// Confirm details - P5 journey
+
+// Split routing from the P5 confirm details page
+
+router.post('/discovery-2023/existing-uplift/confirm-my-details', function (req, res) {
+  
+  // Make a variable and give it the value from 'confirm-details-radio'
+  var confirmDetails = req.session.data['checkDetails'];
+
+  //Check whether the variable matches a condition below
+  if (confirmDetails == 'yes'){
+    // Send user to next page
+    res.redirect('/discovery-2023/create-account/spinner-confirm')
+  }else if (confirmDetails == 'no'){
+    res.redirect('/discovery-2023/error/wrong-details')
+  }else{
+    res.redirect('/discovery-2023/error/partial-details-match')
+  }
+})
+
+
+
 // Add your routes here - above the module.exports line
 
 module.exports = router;

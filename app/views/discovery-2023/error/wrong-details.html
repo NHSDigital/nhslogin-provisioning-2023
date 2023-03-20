@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+This NHS record does not match your details
+{% endblock %}
+
+{% block outerContent %}
+
+{% endblock %}
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+     
+     
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              This NHS record does not match your details
+            </h1>
+          </legend>
+
+          <div class="nnhsuk-table-container">
+            <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-summary-list__key">
+                Name
+              </td>
+              <td class="nhsuk-summary-list__value">
+                {{ data['firstName'] or 'Alex' }} {{ data['middleName'] }} {{ data['lastName'] or 'Smith' }}
+              </td>
+          
+            </tr>
+          
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-summary-list__key">
+                Date of birth
+              </td>
+              <td class="nhsuk-summary-list__value">
+                {{ data['DoBDay'] or '10' }} {{ data['DoBMonth'] or 'June' }} {{ data['DoBYear'] or '1986' }}
+              </td>
+          
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-summary-list__key">
+                NHS number
+              </td>
+              <td class="nhsuk-summary-list__value">
+                {{ data['enterNHSNumber'] or '*** *** 3456' }}
+              </td>
+          
+            </tr>
+          
+          </tbody>
+          </table>
+          </div>
+
+          <p class="nhsuk-body">
+            If you are sure these are not your details, <a>contact us and let us know</a>.
+          </p>
+          <p class="nhsuk-body">
+            If you chose this option by mistake, <a href="/nhslogin/P5/confirm-details">go back and change your answer</a>.
+          </p>
+        
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>Reference: <strong>CID1005</strong></p>
+          </div>
+ 
+
+      {% if data['devMode'] %}
+      {% include "includes/devmode-enter-email.html" %}
+      {% endif %}
+
+    </div>
+  </div>
+
+
+{% endblock %}
