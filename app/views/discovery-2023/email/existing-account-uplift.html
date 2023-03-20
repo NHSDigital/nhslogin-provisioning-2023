@@ -46,9 +46,18 @@ Finish setting up your NHS login
       </p>
 
       <p class="nhsuk-body">This invitation will expire in <strong>7 days</strong>.</p>
+
+      {% if data.error === 'trueNow' %} 
+
+      <a href="../existing-uplift/spinner-set-up?error=trueNow" target="_blank" class="nhsuk-button">Finish setting up your NHS login</a>
+      <p><a href="../existing-uplift/spinner-set-up?error=trueNow" target="_blank">https://settings.login.nhs.uk/</a></p>
+
+      {% else %}
+
+      <a href="../existing-uplift/spinner-set-up?error=trueNow" target="_blank" class="nhsuk-button">Finish setting up your NHS login</a>
+      <p><a href="../existing-uplift/spinner-set-up?error=trueNow" target="_blank">https://settings.login.nhs.uk/</a></p>
       
-      <a href="../existing-uplift/spinner-set-up" target="_blank" class="nhsuk-button">Finish setting up your NHS login</a>
-      <p><a href="../existing-uplift/spinner-set-up" target="_blank">https://settings.login.nhs.uk/</a></p>
+      {% endif %}
 
       <h2 class="nhsuk-heading-m">Help with NHS login</h2>
       <p>

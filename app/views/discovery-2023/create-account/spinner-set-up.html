@@ -58,11 +58,23 @@ Checking details
 </div>
 
 
+{% if data.error === 'trueNow' %} 
+
+<script>
+  setTimeout(function(){
+    window.location.href='../error/expired';
+}, 2500);
+</script>
+
+{% else %}
+
 <script>
   setTimeout(function(){
     window.location.href='steps-who';
 }, 2500);
 </script>
+
+{% endif %}
 
 
 
