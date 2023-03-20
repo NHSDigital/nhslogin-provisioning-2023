@@ -122,7 +122,7 @@ router.post('/discovery-2023/existing-uplift/confirm-my-details', function (req,
   //Check whether the variable matches a condition below
   if (confirmDetails == 'yes'){
     // Send user to next page
-    res.redirect('/discovery-2023/create-account/spinner-confirm')
+    res.redirect('/discovery-2023/existing-uplift/spinner-confirm')
   }else if (confirmDetails == 'no'){
     res.redirect('/discovery-2023/error/wrong-details')
   }else{
