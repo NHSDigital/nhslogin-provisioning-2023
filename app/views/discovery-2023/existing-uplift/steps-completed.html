@@ -9,20 +9,12 @@ You have set up an NHS login
     <div class="nhsuk-grid-column-two-thirds">
 
 
-      {% if data.p0 === 'trueNow' %} 
 
-      <form action="login-enter-password?p0=trueNow" method="post" class="form">
+
+      <form action="password-set" method="post" class="form">
         <fieldset class="nhsuk-fieldset">
-
-      {% endif %}
-		
-      {% if data.p5 === 'trueNow' %} 
-
-      <form action="login-enter-password?p5=trueNow" method="post" class="form">
-        <fieldset class="nhsuk-fieldset">
-
-      {% endif %}
           
+        
           <div class="service-access-wrapper">
             <ol class="service-access">
 
@@ -40,69 +32,43 @@ You have set up an NHS login
                   <h3 class="service-access__item__title ticked" style="font-size:18px">Finish setting up your NHS login</h3>
                   <div class="service-access__item__desc">	
                   </div>	
-                </li>
-                
+                  </li> 
 
                 <li class="service-access__item active">
-                  <h3 class="service-access__item__title">You have set up an NHS login</h3>
-                  <div class="service-access__item__desc">
-                  
-                  <p style="font-size:18px">
-                    You have passed our checks and can now use your NHS login to access the <a href="https://www.nhsapp.service.nhs.uk/login">NHS App</a>, or <a href="https://www.nhs.uk/">NHS website</a>.
-                  </p>
-                  <p style="font-size:18px">
-                    We have sent you an email to confirm you have finished setting up your NHS login.
-                  </p>
-                  <p style="font-size:18px">
-                    You can also use the service your GP has recommended and other digital health and care services.
-                  </p>
+                    <h3 class="service-access__item__title">You have set up an NHS login</h3>
+                    <div class="service-access__item__desc">
+                    
+                    <p style="font-size:18px">
+                      You have passed our checks and can access the <strong>{{ data['clientName'] or 'NHS App' }}</strong>.
+                    </p>
+                    <h2 class="nhsuk-heading-s">What happens next</h2>
+                    <p style="font-size:18px">
+                      We have sent you an email to confirm you have finished setting up your NHS login.
+                    </p>
+                    <p style="font-size:18px">
+                      Make sure you download the NHS App if you haven't already.
+                    </p>
+                    <p style="font-size:18px">
+                      You can now log in to the service your GP has recommended and other digital health and care services.
+                    </p>
 
-                  <p style="font-size:18px">
-                    This includes:
-                  </p>
+                      <a href="https://www.nhsapp.service.nhs.uk/login" target="_blank" role="button" draggable="false" class="nhsuk-button">
+                        Log in
+                      </a>
 
-                  <p class="nhsuk-body">
-                    <ul class="nhsuk-list nhsuk-list--bullet" style="font-size:18px">
-                      <li>
-                        health and wellbeing services
-                      </li>
-                      <li>
-                        maternity and child health services
-                      </li>
-                      <li>
-                        online pharmacies
-                      </li>
-                      <li>
-                        online and video consultation services
-                      </li>  
-                      <li>
-                        patient access services
-                      </li>          
-                    </ul>
-                  </p>
-
-                    <a class="nhsuk-action-link__link" href="https://www.nhs.uk/nhs-services/online-services/nhs-login/websites-and-apps-you-can-access-with-nhs-login/">
-                      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                      </svg>
-                      <span class="nhsuk-action-link__text nhsuk-heading-s">Where you can use your NHS login</span>
-                    </a>
-                  </div>
-
-                  <h3 class="nhsuk-heading-s">Help with NHS login</h3>
-                  <p>
-                    <ul class="nhsuk-list nhsuk-list--bullet" style="font-size:18px">
-                      <li>
-                        To change your NHS login details and password or delete your NHS login if you no longer want to use it, <a href="https://settings.login.nhs.uk/">visit settings</a>
-                      </li>
-                      <li>
-                        If you have technical issues, <a href="https://help.login.nhs.uk/">visit the NHS login help centre</a>
-                      </li>
-                    </ul>
-                  </p>
-                  </div>
-              </li>
+                    <h2 class="nhsuk-heading-s">Help with NHS login</h2>
+                    <p>
+                      <ul class="nhsuk-list nhsuk-list--bullet" style="font-size:18px">
+                        <li>
+                          To change your NHS login details and password or delete your NHS login if you no longer want to use it, <a href="https://settings.login.nhs.uk/">visit settings</a>
+                        </li>
+                        <li>
+                          If you have technical issues, <a href="https://help.login.nhs.uk/">visit the NHS login help centre</a>
+                        </li>
+                      </ul>
+                    </p>
+                    </div>
+                </li>
             </ol>
           
           </div>
