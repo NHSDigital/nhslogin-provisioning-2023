@@ -1,0 +1,124 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+There is already an NHS login account linked to this mobile phone number
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form method="post" action="duplicate-mobile-notification-answer">
+        <fieldset class="nhsuk-fieldset">
+
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+                There is already an NHS login account linked to this mobile phone number
+            </h1>
+          </legend>
+
+
+          <p class="nhsuk-body">
+            An account was set up using this mobile phone number, with a different email address.  
+          </p>
+          <p class="nhsuk-body">
+            To access the existing NHS login account, you need to log in with the email address used to create it.
+          </p>
+          <p class="nhsuk-body">
+            This is because each person can only have one NHS login account.
+          </p>
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                If you cannot remember creating an NHS login account
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p class="nhsuk-body">
+                We can send a reminder to the email address used to create the existing NHS login account. You will need to use this email address to log in to this account.
+              </p>
+            </div>
+          </details>
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                If you want this mobile phone number to be linked to more than one NHS login account
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p class="nhsuk-body">
+                You can continue to create a new NHS login using the email address you have already entered.
+              </p>
+            </div>
+          </details>
+          
+            <div class="nhsuk-form-group">
+              <fieldset class="nhsuk-fieldset">
+              <div class="nhsuk-radios nhsuk-radios--conditional">
+                  <h2 class="nhsuk-heading-l">What do you want to do?</h2>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="duplicateMobile-try-login" name="duplicateMobile" type="radio" value="login" aria-controls="option-mobile-number-1" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="duplicateMobile-try-login">
+                    Log in with the email address used to create the existing NHS login account
+                  </label>
+                </div>
+            
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="duplicateMobile-reminder" name="duplicateMobile" type="radio" value="reminder" aria-controls="option-mobile-number-2" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="duplicateMobile-reminder">
+                    Get a reminder sent to the email address linked to the existing NHS login account
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="duplicateMobile-continue" name="duplicateMobile" type="radio" value="continue" aria-controls="option-mobile-number-3" aria-expanded="false">
+                  <label class="nhsuk-label nhsuk-radios__label" for="duplicateMobile-continue">
+                    Continue to set up a new NHS login account
+                  </label>
+                </div>
+              </div>
+            </div>
+
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
+            Continue
+          </button>
+
+         </fieldset> <!-- nhsuk-fieldset -->
+      </form>
+
+      
+        
+          
+ 
+
+      {% if data['devMode'] %}
+      {% include "includes/devmode-enter-email.html" %}
+      {% endif %}
+
+    </div>
+  </div>
+
+
+{% endblock %}

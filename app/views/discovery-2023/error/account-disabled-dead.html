@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-You cannot continue
+There is a problem
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -29,13 +29,16 @@ You cannot continue
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>You cannot continue</h1>  
+      <h1>There is a problem</h1>  
 
-          <p>You have entered a wrong security code too many times.</p>
+          <p>Your NHS login may have been disabled.</p>
 
-          <p>You must wait 15 minutes before you can try again.</p>
-      
-      <p>Reference: <b>CID1123</b></p>
+          <p>Reference: <strong>CID2012</strong></p>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p><a href="#">What does reference CID2012 mean?</a></p>
+          </div>
 
     </div>  
   </div>

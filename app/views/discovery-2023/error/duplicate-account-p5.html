@@ -1,0 +1,111 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+There is already an NHS login account linked to this NHS number
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form method="post" action="duplicate-nhs-notification-answer">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+                There is already an NHS login account linked to this NHS number
+            </h1>
+          </legend>
+          <p class="nhsuk-body">
+            An account was set up using this NHS number, with a different email address.  
+          </p>
+          <p class="nhsuk-body">
+            You need to login using the email address linked to this account.  
+          </p>
+          <p class="nhsuk-body">
+            This is because each person can only have one NHS login account.  
+          </p>
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                If you cannot remember creating an NHS login account
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p class="nhsuk-body">
+                We can send a reminder to the email address used to create the existing NHS login account. You will need to use this email address to log in to this account.
+              </p>
+            </div>
+          </details>
+         
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+            <div class="nhsuk-radios nhsuk-radios--conditional">
+                <h2 class="nhsuk-heading-l">What do you want to do?</h2>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="duplicateNHS-login" name="duplicateNHS" type="radio" value="login" aria-controls="conditional-nhs-number-1" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="duplicateNHS-login">
+                  Log in with the email address used to create the existing NHS login account
+                </label>
+              </div>
+              
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="duplicateNHS-reminder" name="duplicateNHS" type="radio" value="reminder">
+                <label class="nhsuk-label nhsuk-radios__label" for="duplicateNHS-reminder">
+                  Get a reminder sent to the email address linked to the existing NHS login account
+                </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="duplicateNHS-contact" name="duplicateNHS" type="radio" value="contact-form" aria-controls="option-mobile-number-4" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="duplicateNHS-contact">
+                  Contact NHS login support for help
+                </label>      
+              </div>
+        
+            </div>
+          
+            </fieldset> <!-- nhsuk-fieldset -->
+          </div> <!-- end nhsuk-form-group -->
+
+          <button class="nhsuk-button full-width" type="submit" id="button--save">
+            Continue
+          </button>
+        
+        </fieldset>
+      </form>
+        
+          
+ 
+
+      {% if data['devMode'] %}
+      {% include "includes/devmode-enter-email.html" %}
+      {% endif %}
+
+    </div>
+  </div>
+
+
+{% endblock %}
