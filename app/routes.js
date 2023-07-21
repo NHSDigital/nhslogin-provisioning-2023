@@ -108,9 +108,7 @@ router.post('/createaccount/v1/setup/passwordset', function (req, res) {
 
 })
 
-
-
-// Confirm details - P5 journey
+// EXISTING USER 
 
 // Split routing from the P5 confirm details page
 
@@ -125,10 +123,12 @@ router.post('/discovery-2023/existing-uplift/confirm-my-details', function (req,
     res.redirect('/discovery-2023/existing-uplift/password-set')
   }else if (confirmDetails == 'no'){
     res.redirect('/discovery-2023/error/wrong-details')
-  }else{
+  }else if (confirmDetails == 'some'){
     res.redirect('/discovery-2023/error/partial-details-match')
   }
 })
+
+// NEW USER
 
 // Split routing from the P5 confirm details page
 
@@ -143,7 +143,7 @@ router.post('/discovery-2023/create-account/confirm-my-details', function (req, 
     res.redirect('/discovery-2023/create-account/login-enter-password')
   }else if (confirmDetails == 'no'){
     res.redirect('/discovery-2023/error/wrong-details')
-  }else{
+  }else if (confirmDetails == 'some'){
     res.redirect('/discovery-2023/error/partial-details-match')
   }
 })
