@@ -122,7 +122,25 @@ router.post('/discovery-2023/existing-uplift/confirm-my-details', function (req,
   //Check whether the variable matches a condition below
   if (confirmDetails == 'yes'){
     // Send user to next page
-    res.redirect('/discovery-2023/existing-uplift/spinner-confirm')
+    res.redirect('/discovery-2023/existing-uplift/password-set')
+  }else if (confirmDetails == 'no'){
+    res.redirect('/discovery-2023/error/wrong-details')
+  }else{
+    res.redirect('/discovery-2023/error/partial-details-match')
+  }
+})
+
+// Split routing from the P5 confirm details page
+
+router.post('/discovery-2023/create-account/confirm-my-details', function (req, res) {
+  
+  // Make a variable and give it the value from 'confirm-details-radio'
+  var confirmDetails = req.session.data['checkDetails'];
+
+  //Check whether the variable matches a condition below
+  if (confirmDetails == 'yes'){
+    // Send user to next page
+    res.redirect('/discovery-2023/create-account/login-enter-password')
   }else if (confirmDetails == 'no'){
     res.redirect('/discovery-2023/error/wrong-details')
   }else{
