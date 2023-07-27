@@ -8,9 +8,11 @@ Account details reminder from NHS login
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <h2 class="nhsuk-heading-m">
+      <p>
         Subject: Account details reminder from NHS login
-      </h2>
+      </p>
+
+      <hr>
 
       <p class="nhsuk-body">
         Dear {{ data.UserFirstName or 'Alex' }} {{ data.UserLastName or 'Taylor' }},
@@ -25,13 +27,19 @@ Account details reminder from NHS login
 
       <h2 class="nhsuk-heading-m">Help with NHS login</h2>
       <p>
-        To change your NHS login details and password or delete your NHS login if you no longer want to use it, visit: <a href="https://settings.login.nhs.uk/">https://settings.login.nhs.uk/</a>
+        To change your NHS login details and password or delete your NHS login if you no longer want to use it, visit: 
+        <br>
+        <a href="https://settings.login.nhs.uk/">https://settings.login.nhs.uk/</a>
       </p>
       <p>
-        If you do not have access to the mobile phone you used to create your account, you can <a href="https://prototype-nhs-login.herokuapp.com/nhslogin/login/login-enter-OTP#">change the mobile phone number linked to it</a>. 
+        If you have lost access to your mobile phone number you can visit: 
+        <br>
+        <a href="https://help.login.nhs.uk/manage/phonenumber/#you-have-lost-access-to-your-mobile-phone-number">https://help.login.nhs.uk/manage/phonenumber/#you-have-lost-access-to-your-mobile-phone-number</a>. 
       </p>
       <p>
-        If you have technical issues, visit the NHS login help centre: <a href="https://help.login.nhs.uk/">https://help.login.nhs.uk/</a>
+        If you have technical issues, visit the NHS login help centre: 
+        <br>
+        <a href="https://help.login.nhs.uk/">https://help.login.nhs.uk/</a>
       </p>
 
       <!--<p class="nhsuk-body">This invitation will expire in 7 days.</p>-->
