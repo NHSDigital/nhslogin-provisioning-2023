@@ -26,6 +26,23 @@ Check your phone
   <div class="nhsuk-grid-row">
   
     <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- ERROR SUMMARY OPEN -->
+
+      <div id="errorSummary" style="display: none;" class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+            <li>
+              <a id="summaryErrorMessageContent" href="#securityCodes">Enter the security code</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ERROR SUMMARY CLOSE -->
     
         <h1>Check your phone</h1>
 
@@ -33,19 +50,96 @@ Check your phone
 
         <p>This is the phone number that is registered with your GP surgery.</p>
 
-       <div class="nhsuk-form-group">
+        <div id="formGroup" class="nhsuk-form-group">
           <label class="nhsuk-label" for="securityCodes">
           Security code
           </label>
+          <span id="errorMessageContainer" class="nhsuk-error-message" style="display: none;" id="securityCodes-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> <span id="errorMessageContent">Enter the security code</span>
+          </span>
           <input class="nhsuk-input nhsuk-input--width-10" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
         </div>
 
-<a href="verification" role="button" draggable="false" class="nhsuk-button">
+
+<a id="submitButton" href="verification" role="button" draggable="false" class="nhsuk-button">
   Continue
 </a>
 
       <p>If you do not recognise this phone number or do not have access to your phone, you will need to update your records with your GP.</p>
 </div>
+
+<script>
+  document.querySelector("#submitButton").addEventListener("click",function(e) { 
+    var isValid = inlineValidation();
+
+    if(!isValid) {
+      e.preventDefault();
+    }
+  })
+
+  document.querySelector("#securityCodes").addEventListener("change",function(e) {
+    inlineValidation();
+  })
+
+  function showErrorSummary(errorMessage) {
+    var errorSummary = document.querySelector("#errorSummary").style.display = "block";
+    if(errorMessage) {
+      var summaryErrorMessageContent = document.querySelector("#summaryErrorMessageContent").textContent = errorMessage;
+    }
+    else {
+      var summaryErrorMessageContent = document.querySelector("#summaryErrorMessageContent").textContent = "default error message";
+    }
+    
+  }
+
+  function hideErrorSummary() {
+    var errorSummary = document.querySelector("#errorSummary").style.display = "none";
+  }
+
+  function showInputError(errorMessage) {
+    var formGroup = document.querySelector("#formGroup").classList.add("nhsuk-form-group--error");
+    var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "block";
+
+    if(errorMessage) {
+      var errorMessageContent = document.querySelector("#errorMessageContent").textContent = errorMessage;
+    }
+
+    else {
+      var errorMessageContent = document.querySelector("#errorMessageContent").textContent = "default error message";
+    }
+  }
+
+  function hideInputError() {
+    var formGroup = document.querySelector("#formGroup").classList.remove("nhsuk-form-group--error");
+    var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "none";
+  }
+
+  function inlineValidation() {
+    var inputValue = document.querySelector("#securityCodes").value;
+    
+    if(inputValue.length === 0) {
+      showErrorSummary("Enter the security code");
+      showInputError("Enter the security code");
+      return false;
+    }
+
+    if(inputValue.length !== 6) {
+      showErrorSummary("Enter a valid security code");
+      showInputError("Enter a valid security code");
+      return false;
+    }
+
+    if(inputValue !== "123456") {
+      showErrorSummary("Enter the correct security code");
+      showInputError("Enter the correct security code");
+      return false;
+    }
+
+    
+
+    return true;
+  }
+</script>
 
 {% endblock %}
 
