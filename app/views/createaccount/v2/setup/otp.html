@@ -54,7 +54,7 @@ Check your phone
           <label class="nhsuk-label" for="securityCodes">
           Security code
           </label>
-          <span id="errorMessageContainer" class="nhsuk-error-message" style="display: none;" id="securityCodes-error">
+          <span id="errorMessageContainer" class="nhsuk-error-message" style="display: none;">
             <span class="nhsuk-u-visually-hidden">Error:</span> <span id="errorMessageContent">Enter the security code</span>
           </span>
           <input class="nhsuk-input nhsuk-input--width-10" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
@@ -99,6 +99,7 @@ Check your phone
   function showInputError(errorMessage) {
     var formGroup = document.querySelector("#formGroup").classList.add("nhsuk-form-group--error");
     var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "block";
+    var inputError = document.querySelector("#securityCodes").classList.add("nhsuk-input--error");
 
     if(errorMessage) {
       var errorMessageContent = document.querySelector("#errorMessageContent").textContent = errorMessage;
