@@ -8,16 +8,18 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <h2 class="nhsuk-heading-m">
+      <p>
         Subject: Invite to set up your NHS login
-      </h2>
+      </p>
+
+      <hr>
       
       <p class="nhsuk-body">
         Dear {{ data.UserFirstName or 'Alex' }} {{ data.UserLastName or 'Taylor' }},
       </p>
       
       <p class="nhsuk-body">
-        Your GP has recommended that you use the <strong>NHS App</strong>. To access it you will need an NHS login account.
+        Your GP surgery has recommended that you use the <strong>NHS App</strong>. To access it you will need an NHS login account.
       </p>
 
       <p class="nhsuk-body">This means you can do things like: 
@@ -30,10 +32,7 @@
           </li>
           <li>
             order repeat prescriptions 
-          </li>
-          <li>
-            download your NHS Covid Pass for travel abroad 
-          </li>          
+          </li>         
         </ul>
       </p>
 
@@ -52,12 +51,12 @@
       {% if data.error === 'trueNow' %} 
 
       <a href="../create-account/spinner-set-up?error=trueNow" target="_blank" class="nhsuk-button">Finish setting up your NHS login</a>
-      <p><a href="../create-account/spinner-set-up?error=trueNow" target="_blank">https://access.login.nhs.uk/finish-set-up</a></p>
+      <p><a href="../create-account/spinner-set-up?error=trueNow" target="_blank">https://provisioning.login.nhs.uk/finish-set-up/</a></p>
 
       {% else %}
 
       <a href="../create-account/spinner-set-up" target="_blank" class="nhsuk-button">Finish setting up your NHS login</a>
-      <p><a href="../create-account/spinner-set-up" target="_blank">https://access.login.nhs.uk/finish-set-up</a></p>
+      <p><a href="../create-account/spinner-set-up" target="_blank">https://provisioning.login.nhs.uk/finish-set-up/</a></p>
       
       {% endif %}
       <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email - this is an automated message</div>
