@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Next steps
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+
+      <form action="confirm-my-details" method="post" class="form">
+        <fieldset class="nhsuk-fieldset">
+          
+        
+          <div class="service-access-wrapper">
+            <ol class="service-access">
+
+                <li class="service-access__item completed"> 
+                  <h3 class="service-access__item__title ticked" style="font-size:18px">Your GP has confirmed your identity</h3>
+                  <div class="service-access__item__desc">	
+                  </div>	
+                </li> 
+                <li class="service-access__item completed"> 
+                  <h3 class="service-access__item__title ticked" style="font-size:18px">Get a security code</h3>
+                  <div class="service-access__item__desc">	
+                  </div>	
+                </li> 
+
+              <li class="service-access__item active">
+                  <p class="service-access__item__title__text__leftandright"><b>Next step</b></p>
+                  <h3 class="service-access__item__title">Finish setting up your NHS login</h3>
+                  <div class="service-access__item__desc">
+                    <p>Confirm the details we have for you are correct and enter a password to finish setting up.</p>
+                  </div>
+                  <button data-redirect="confirm-my-details" class="nhsuk-button full-width" >Continue</button>
+              </li>
+            </ol>
+          
+          </div>
+          
+        </fieldset>   
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}
+
