@@ -25,6 +25,24 @@ Enter the 6 digit security code
   <div class="nhsuk-grid-row">
   
     <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Do not remove error summary, it is hidden unless triggered by javascript -->
+      <!-- ERROR SUMMARY OPEN -->
+
+      <div id="errorSummary" style="display: none;" class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+            <li>
+              <a id="summaryErrorMessageContent" href="#securityCodes">Enter the security code</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ERROR SUMMARY CLOSE -->
     
         <h1 class="nhsuk-heading-l">Enter the 6 digit security code</h1>
 
@@ -59,24 +77,103 @@ Enter the 6 digit security code
 
 
         <div class="nhsuk-u-padding-bottom-4"></div>
-
-        <div class="nhsuk-form-group">
+           <!-- id= formGroup necessary for javascript. Do not remove -->
+        <div id="formGroup" class="nhsuk-form-group">
           <label class="nhsuk-label" for="securityCodes">
           Security code
           </label>
+          <!-- span for error message do not remove- it is triggered by javascript and is otherwise hidden -->
+          <span id="errorMessageContainer" class="nhsuk-error-message" style="display: none;">
+            <span class="nhsuk-u-visually-hidden">Error:</span> <span id="errorMessageContent">Enter the security code</span>
+          </span>
           <div class="nhsuk-hint" id="phoneOTPHint">
             The code is 6 digits
           </div>
           <input class="nhsuk-input nhsuk-input--width-10" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
         </div>
 
-        <a href="steps-finish-set-up" role="button" draggable="false" class="nhsuk-button">
+        <!-- id= submitButton added for javascript to run, do not remove -->
+        <a id="submitButton" href="steps-finish-set-up" role="button" draggable="false" class="nhsuk-button">
           Continue
         </a>
 
     </div>
    
   </div>
+
+  <script>
+    document.querySelector("#submitButton").addEventListener("click",function(e) { 
+      var isValid = inlineValidation();
+  
+      if(!isValid) {
+        e.preventDefault();
+      }
+    })
+  
+    document.querySelector("#securityCodes").addEventListener("change",function(e) {
+      inlineValidation();
+    })
+  
+    function showErrorSummary(errorMessage) {
+      var errorSummary = document.querySelector("#errorSummary").style.display = "block";
+      if(errorMessage) {
+        var summaryErrorMessageContent = document.querySelector("#summaryErrorMessageContent").textContent = errorMessage;
+      }
+      else {
+        var summaryErrorMessageContent = document.querySelector("#summaryErrorMessageContent").textContent = "default error message";
+      }
+      
+    }
+  
+    function hideErrorSummary() {
+      var errorSummary = document.querySelector("#errorSummary").style.display = "none";
+    }
+  
+    function showInputError(errorMessage) {
+      var formGroup = document.querySelector("#formGroup").classList.add("nhsuk-form-group--error");
+      var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "block";
+      var inputError = document.querySelector("#securityCodes").classList.add("nhsuk-input--error");
+  
+      if(errorMessage) {
+        var errorMessageContent = document.querySelector("#errorMessageContent").textContent = errorMessage;
+      }
+  
+      else {
+        var errorMessageContent = document.querySelector("#errorMessageContent").textContent = "default error message";
+      }
+    }
+  
+    function hideInputError() {
+      var formGroup = document.querySelector("#formGroup").classList.remove("nhsuk-form-group--error");
+      var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "none";
+    }
+  
+    function inlineValidation() {
+      var inputValue = document.querySelector("#securityCodes").value;
+      
+      if(inputValue.length === 0) {
+        showErrorSummary("Enter the security code");
+        showInputError("Enter the security code");
+        return false;
+      }
+  
+      if(inputValue.length !== 6) {
+        showErrorSummary("Enter a valid security code");
+        showInputError("Enter a valid security code");
+        return false;
+      }
+  
+      if(inputValue !== "123456") {
+        showErrorSummary("Enter the correct security code");
+        showInputError("Enter the correct security code");
+        return false;
+      }
+  
+      
+  
+      return true;
+    }
+  </script>
 
 {% endblock %}
 
