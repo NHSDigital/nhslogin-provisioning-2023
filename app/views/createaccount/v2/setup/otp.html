@@ -49,18 +49,19 @@ Check your phone
         <p>Enter the 6 digit security code that we have sent to *******8209.</p>
 
         <p>This is the phone number that is registered with your GP surgery.</p>
-
+          <!-- id= formGroup necessary for javascript. Do not remove -->
         <div id="formGroup" class="nhsuk-form-group">
           <label class="nhsuk-label" for="securityCodes">
           Security code
           </label>
+          <!-- span for error message do not remove- it is triggered by javascript and is otherwise hidden -->
           <span id="errorMessageContainer" class="nhsuk-error-message" style="display: none;">
             <span class="nhsuk-u-visually-hidden">Error:</span> <span id="errorMessageContent">Enter the security code</span>
           </span>
           <input class="nhsuk-input nhsuk-input--width-10" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
         </div>
 
-
+<!-- id= submitButton added for javascript to run, do not remove -->
 <a id="submitButton" href="verification" role="button" draggable="false" class="nhsuk-button">
   Continue
 </a>
