@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-Security code expired
+There is already an NHS login account linked to this NHS number
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -29,15 +29,23 @@ Security code expired
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Security code expired</h1>  
+      <h1>There is already an NHS login account linked to this NHS number</h1>  
 
-          <p>The security code you entered has expired.</p>
-
-          <p>It has been more than <strong>5 minutes</strong> since it was sent.</p>
-
-          <p><a href="../check-user/otp?resend=yes">Send a new code</a></p>
+            <p>
+              An account was set up using this NHS number, with a different email address.
+            </p>
       
-      <!--<p>Reference: <b>CID1122</b></p>-->
+            <p>
+              You can use the email linked to this account to access the <a href="https://www.nhsapp.service.nhs.uk/login">NHS App</a>.
+            </p>
+
+            <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>If you cannot remember creating an NHS login account, <a href="https://prototype-nhs-login-help-87153c4cb7ee.herokuapp.com/">visit the NHS login help centre for further help</a>.</p>
+            </div>
+
+            <p>Reference: <b>CID11006</b></p>
+
 
     </div>  
   </div>

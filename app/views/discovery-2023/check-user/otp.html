@@ -11,13 +11,6 @@
 Enter the 6 digit security code
 {% endblock %}
 
-{% block topRow %}
-{% if resend === "yes" %}
-{% import "layouts/_callout.html" as callout %}
-{{ callout.pattern('','Your security code has been resent.','attention') }}
-{% endif %}
-{% endblock %}
-
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
 {% block content %}
@@ -42,9 +35,18 @@ Enter the 6 digit security code
         </div>
       </div>
 
+
+
       <!-- ERROR SUMMARY CLOSE -->
     
         <h1 class="nhsuk-heading-l">Enter the 6 digit security code</h1>
+        
+        {% if data.resendOTP === 'true' %}  
+        <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>You have been sent a new security code.</p>
+        </div>
+        {% endif %}
 
         <p class="nhsuk-body">We have sent a text to <strong>•••••••8209</strong>.</p>
         <p class="nhsuk-body">This is the phone number that is registered with your GP surgery.</p>

@@ -112,7 +112,7 @@ router.post('/createaccount/v1/setup/passwordset', function (req, res) {
 
 // Split routing from the P5 confirm details page
 
-router.post('/discovery-2023/existing-uplift/confirm-my-details', function (req, res) {
+router.post('/discovery-2023/check-user/confirm-my-details', function (req, res) {
   
   // Make a variable and give it the value from 'confirm-details-radio'
   var confirmDetails = req.session.data['checkDetails'];
@@ -123,31 +123,10 @@ router.post('/discovery-2023/existing-uplift/confirm-my-details', function (req,
     res.redirect('/discovery-2023/existing-uplift/password-set')
   }else if (confirmDetails == 'no'){
     res.redirect('/discovery-2023/error/wrong-details')
-  }else if (confirmDetails == 'some'){
+  }else {
     res.redirect('/discovery-2023/error/partial-details-match')
   }
 })
-
-// NEW USER
-
-// Split routing from the P5 confirm details page
-
-router.post('/discovery-2023/create-account/confirm-my-details', function (req, res) {
-  
-  // Make a variable and give it the value from 'confirm-details-radio'
-  var confirmDetails = req.session.data['checkDetails'];
-
-  //Check whether the variable matches a condition below
-  if (confirmDetails == 'yes'){
-    // Send user to next page
-    res.redirect('/discovery-2023/create-account/login-enter-password')
-  }else if (confirmDetails == 'no'){
-    res.redirect('/discovery-2023/error/wrong-details')
-  }else if (confirmDetails == 'some'){
-    res.redirect('/discovery-2023/error/partial-details-match')
-  }
-})
-
 
 
 // Add your routes here - above the module.exports line
