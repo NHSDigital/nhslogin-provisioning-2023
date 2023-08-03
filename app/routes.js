@@ -108,25 +108,27 @@ router.post('/createaccount/v1/setup/passwordset', function (req, res) {
 
 })
 
-// EXISTING USER 
 
-// Split routing from the P5 confirm details page
+// Routes for confirm my details - radios
 
-router.post('/discovery-2023/check-user/confirm-my-details', function (req, res) {
-  
-  // Make a variable and give it the value from 'confirm-details-radio'
-  var confirmDetails = req.session.data['checkDetails'];
+router.post('/discovery-2023/check-user/confirm-my-details', function (req, res){
+  var confirmDetails = req.session.data['checkDetails']
+  var journey = req.session.data['journey']
 
-  //Check whether the variable matches a condition below
   if (confirmDetails == 'yes'){
-    // Send user to next page
-    res.redirect('/discovery-2023/existing-uplift/password-set')
+    if (journey === 'uplift'){
+    res.redirect('/discovery-2023/existing-uplift//login-enter-password')
+    }
+    else {
+      res.redirect('/discovery-2023/create-account/password-set')
+    }
   }else if (confirmDetails == 'no'){
     res.redirect('/discovery-2023/error/wrong-details')
-  }else {
+  }else{
     res.redirect('/discovery-2023/error/partial-details-match')
   }
 })
+
 
 
 // Add your routes here - above the module.exports line
