@@ -94,21 +94,24 @@ Enter the 6 digit security code
           <input class="nhsuk-input nhsuk-input--width-10" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
         </div>
 
-        <!-- id= submitButton added for javascript to run, do not remove -->
-        <a id="submitButton" href="spinner-check" role="button" draggable="false" class="nhsuk-button">
+        <!-- id= button--save added for javascript to run, do not remove -->
+        <button data-redirect="steps-finish-set-up" class="nhsuk-button full-width" type="submit" id="button--save">
           Continue
-        </a>
+        </button>
 
     </div>
    
   </div>
 
   <script>
-    document.querySelector("#submitButton").addEventListener("click",function(e) { 
+    document.querySelector("#button--save").addEventListener("click",function(e) { 
       var isValid = inlineValidation();
   
       if(!isValid) {
         e.preventDefault();
+      }
+      else {
+        submitSpin();
       }
     })
   
@@ -175,6 +178,19 @@ Enter the 6 digit security code
   
       return true;
     }
+
+
+    // button spinner code
+
+    function submitSpin() {
+      var button = document.querySelector("#button--save")
+      button.setAttribute('disabled', 'disabled')
+      button.className += ' button--save'
+      setTimeout(function () {
+        window.location.href = button.dataset.redirect;
+      }, 2000)
+    }
+
   </script>
 
 {% endblock %}
