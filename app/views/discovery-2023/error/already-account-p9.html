@@ -1,0 +1,65 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+There is a problem
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>There is a problem</h1>  
+
+            <p>
+              You already have an NHS login account.
+            </p>
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <h2 class="nhsuk-heading-s">Help with accessing your NHS login account</h2>
+                <p>
+                  <ul class="nhsuk-list nhsuk-list--bullet" style="font-size:18px">
+                    <li>
+                      To change your NHS login details and password or delete your NHS login if you no longer want to use it, <a href="https://settings.login.nhs.uk/">visit settings</a>
+                    </li>
+                    <li>
+                      Find out more about what you can do if you have lost access to your mobile phone number on the <a>NHS login help centre</a>.
+                    </li>
+                    <li>
+                      If you have technical issues, <a href="https://help.login.nhs.uk/">visit the NHS login help centre</a>
+                    </li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+
+            <p>Reference: <b>CID11004</b></p>
+
+
+    </div>  
+  </div>
+    </div>
+  </div>  
+{% endblock %}
