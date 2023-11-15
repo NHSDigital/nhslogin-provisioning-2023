@@ -44,7 +44,15 @@ There is already an NHS login account linked to this NHS number
               <p>If you cannot remember creating an NHS login account, <a href="https://prototype-nhs-login-help-87153c4cb7ee.herokuapp.com/">visit the NHS login help centre for further help</a>.</p>
             </div>
 
+            {% if data.alreadyUser === 'multiple' %} <!-- Multiple accounts with the same NHS No -->
+
+            <p>Reference: <b>CID11012</b></p>
+
+            {% elif data.alreadyUser === 'one' %} <!-- 1 account that exists with the same NHS No -->
+
             <p>Reference: <b>CID11006</b></p>
+
+            {% endif %}
 
 
     </div>  
