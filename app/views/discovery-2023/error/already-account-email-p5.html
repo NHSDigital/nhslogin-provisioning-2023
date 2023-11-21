@@ -8,7 +8,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-There is already an NHS login account linked to this NHS number
+There is already an NHS login account with this email
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -29,14 +29,14 @@ There is already an NHS login account linked to this NHS number
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>There is already an NHS login account linked to this NHS number</h1>  
+      <h1>There is already an NHS login account with this email</h1>  
 
             <p>
-              An account was set up using this NHS number, with a different email address.
+              You will need to contact your GP surgery about sending another request to a different email.
             </p>
       
             <p>
-              You can use the email linked to this account to access the <a href="https://www.nhsapp.service.nhs.uk/login">NHS App</a>.
+              This is because each person can only have one NHS login account.
             </p>
 
             <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
@@ -44,15 +44,7 @@ There is already an NHS login account linked to this NHS number
               <p>If you cannot remember creating an NHS login account, <a href="https://prototype-nhs-login-help-87153c4cb7ee.herokuapp.com/">visit the NHS login help centre for further help</a>.</p>
             </div>
 
-            {% if data.alreadyUser === 'multiple' %} <!-- Multiple accounts with the same NHS No -->
-
-            <p>Reference: <b>CID11012</b></p>
-
-            {% elif data.alreadyUser === 'one' %} <!-- 1 account that exists with the same NHS No -->
-
-            <p>Reference: <b>CID11006</b></p>
-
-            {% endif %}
+            <p>Reference: <b>CID11009</b></p>
 
 
     </div>  
