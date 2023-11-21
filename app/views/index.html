@@ -67,6 +67,8 @@
                 <span class="nhsuk-details__summary-text">
                   Errors
                 </span>
+
+            {% endif %}
               </summary>
               <div class="nhsuk-details__text">
                 <p>The same checks are done to see if a user has changed state since the GP checks (journey 1), these screens are shown to the user.</p>
@@ -75,8 +77,10 @@
                   <li><a href="discovery-2023/error/account-disabled">Account disabled</a></li>
                   <li><a href="discovery-2023/error/account-disabled-dead-with-account">Account disabled - User dead with account</a></li>
                   <li><a href="discovery-2023/error/account-disabled-dead-no-account">Account disabled - User dead without account</a></li>
-                  <li><a href="discovery-2023/error/already-account-email">Duplicate email</a></li>
-                  <li><a href="discovery-2023/error/already-account-p5">Duplicate NHS number/P5 account exists</a></li>
+                  <li><a href="discovery-2023/error/already-account-email-p5">Duplicate email (P5)</a></li>
+                  <li><a href="discovery-2023/error/already-account-email-p9">Duplicate email (P9)</a></li>
+                  <li><a href="discovery-2023/error/already-account-p5?alreadyUser=multiple">Duplicate NHS number/ multiple P5 account exists</a></li>
+                  <li><a href="discovery-2023/error/already-account-p5?alreadyUser=one">Duplicate NHS number/one P5 account exists</a></li>
                   <li><a href="discovery-2023/error/email-link-lockout">Email link lockout</a></li>
                   <!-- duplicate-account-p0 = duplicate-mobile-notification -->
                   <li><a href="discovery-2023/error/generic">Generic error</a></li>
