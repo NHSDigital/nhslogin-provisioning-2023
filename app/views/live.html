@@ -1,0 +1,158 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!--
+  In /views/layout.html you can:
+    - change the header and footer
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  NHS login prototype - what's in research
+{% endblock %}
+
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+    <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+      <div class="nhsuk-width-container">
+        <ol class="nhsuk-breadcrumb__list">
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/index">Home</a></li>
+<!-- 
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Level 1</a></li>
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Level 2</a></li>
+ -->
+        </ol>
+      </div>
+    </nav>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+    
+<div class="nhsuk-width-container ">
+              <h1>NHS login user journeys</h1>
+              <span class="nhsuk-caption-m nhsuk-caption--bottom">Some of these journeys will use the same screens but with different parameters depending on what is happening. For information on these parameters, go to <a href="how-to-use">how to use</a>.</span>
+
+      <br>
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+    
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+      <div class="service-access-wrapper">
+        <ol class="service-access">
+      <!--<div class="informative-tab-white" id="user-journeys"><strong>Discovery 2023</strong></div>-->
+      <li class="service-access__item active"> 
+
+        
+        <h3>Update 2024 / NHS Wales App service</h3>
+
+        <p>[Add new links with params]</p>
+        
+        <h3>Discovery 2023 / NHS App main service</h3>
+
+        <div class="informative-palegrey">GP checks</div><br>
+        <p style="font-size:14px;">
+          Provisioning will get it's own error codes to send back or be shared with GP staff.
+        </p>
+        <ol class="nhsuk-contents-list__list" style="font-size:14px;">
+          <li class="nhsuk-contents-list__item"><a href="https://nhsd-confluence.digital.nhs.uk/display/NL/Provisioning+Journey+1+-+Responses%2C+errors+and+emails" target="_blank">Error table on Confluence</a></li>
+        </ol>
+
+        <div class="informative-palegrey">User journey</div><br>
+            <p style="font-size:14px;">
+              Allowing users to claim an NHS login account provisioned or uplifted by a GP.
+            </p>
+            <ol class="nhsuk-contents-list__list" style="font-size:14px;">
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="discovery-2023/email/invite-new-account">New account set up email</a>
+              </li>
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="discovery-2023/email/existing-account-uplift">Existing account uplift email </a>
+              </li>
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="discovery-2023/email/existing-account-recovery">Existing account recovery email</a>
+              </li>
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="discovery-2023/email/success-new-account">Succes new account</a>
+              </li>
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="discovery-2023/email/success-uplift">Succes uplift (same as new account)</a>
+              </li>
+            </ol>
+
+            <div class="informative-palegrey">Errors</div><br>
+              <div class="nhsuk-details__text">
+                <p style="font-size:14px;">The same checks are done to see if a user has changed state since the GP checks (journey 1), these screens are shown to the user.</p>
+                <ul style="font-size:14px;">
+                  <li><a href="discovery-2023/error/already-pyi-in-progress">Already has submitted a PYI application</a></li>
+                  <li><a href="discovery-2023/error/expired">Already uplifted (same as link expired)</a></li>
+                  <li><a href="discovery-2023/error/account-disabled">Account disabled</a></li>
+                  <li><a href="discovery-2023/error/account-disabled-dead-with-account">Account disabled - User dead with account</a></li>
+                  <li><a href="discovery-2023/error/account-disabled-dead-no-account">Account disabled - User dead without account</a></li>
+                  <li><a href="discovery-2023/error/already-account-email-p5">Duplicate email (P5)</a></li>
+                  <li><a href="discovery-2023/error/already-account-email-p9">Duplicate email (P9)</a></li>
+                  <li><a href="discovery-2023/error/already-account-p5?alreadyUser=multiple">Duplicate NHS number/ multiple P5 account exists</a></li>
+                  <li><a href="discovery-2023/error/already-account-p5?alreadyUser=one">Duplicate NHS number/ one P5 account exists</a></li>
+                  <li><a href="discovery-2023/error/email-link-lockout">Email link lockout</a></li>
+                  <!-- duplicate-account-p0 = duplicate-mobile-notification -->
+                  <li><a href="discovery-2023/error/generic">Generic error</a></li>
+                  <li><a href="discovery-2023/error/expired">Link expired (same as already uplifted)</a></li>
+                  <li><a href="discovery-2023/error/expiredotp">OTP expired</a></li>
+                  <li><a href="discovery-2023/error/lockoutotp">OTP lockout</a></li>
+                  <li><a href="discovery-2023/error/pds-no-match">PDS data doesn't match</a></li>
+                  <li><a href="discovery-2023/error/pds-mobile-change">PDS mobile no longer matches</a></li>
+                  <li><a href="discovery-2023/error/already-account-p9">P9 account already exists</a></li>
+                  <li><a href="discovery-2023/error/timeout">Timeout</a></li>
+                  <li><a href="discovery-2023/error/wrongotp">Wrong code entered</a></li>
+                  <li><a href="discovery-2023/error/wrong-password">Wrong password</a></li>
+                </ul>
+                <p style="font-size:14px;">P5 only details error screens</p>
+                <ul style="font-size:14px;">
+                  <li><a href="discovery-2023/error/duplicate-account-p5">Duplicate accounts - P5</a></li>
+                  <!-- duplicate-account-p5 = duplicate-nhsnumber-notification -->
+                  <li><a href="discovery-2023/error/partial-details-match">Some of these details are wrong</a></li>
+                  <li><a href="discovery-2023/error/wrong-details">Wrong details</a></li>
+                </ul>
+                <p style="font-size:14px;">Other error triggers</p>
+                <ul style="font-size:14px;">
+                  <li><a href="discovery-2023/email/existing-account-recovery">Email - Already set up duplicate email sent from duplicates page</a></li>
+                </ul>
+            
+              </div>
+            </details>
+          </div>
+        </div>
+          
+
+          
+        </div>
+      </li>
+      
+    </ol>
+          
+    </div>
+
+
+
+      <!-- End of content in main area -->
+
+    </div>
+
+</div>
+
+    </div>
+
+{% endblock %}

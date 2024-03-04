@@ -4,155 +4,100 @@
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
+<!--
   In /views/layout.html you can:
-    - change the header and footer 
+    - change the header and footer
     - add custom CSS and JavaScript
 -->
 
-<!-- Set the page title inside the pageTitle block -->
+<!-- Set the page title -->
 {% block pageTitle %}
-  NHS login - Provisioning
+  NHS login prototype
 {% endblock %}
 
-<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-{% endblock %}
+<section class="nhsuk-hero">
+    <div class="nhsuk-width-container nhsuk-hero--border app-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-hero__wrapper app-hero__wrapper">
+            <h1 class="nhsuk-u-margin-bottom-4">Welcome to the NHS login Provisioning prototype</h1>
+            <p class="nhsuk-body-l nhsuk-u-margin-bottom-1">Use this service to view the Provisioning journey and errors.</p>
+            <br>
+            <span class="nhsuk-body-s" style="font-size:12px;">Maintained by NHS login, <b>Heather Paxton</b> (interaction designer) and <b>Johnny Lorrimer</b> (content designer).</span>
+            <!-- Prototype dedicated to the great Teebs -->
 
-<!-- Your page content goes inside the content block -->
-<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
-{% block content %}
-  <div class="nhsuk-grid-row">
-      <h1>Provisioning API</h1>
-
-      <div class="nhsuk-grid-column-three-quarters">
-
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h2 class="nhsuk-card__heading">
-              Discovery 2023
-            </h2>
-
-            <h3>GP checks</h3>
-            <p>
-              Provisioning will get it's own error codes to send back or be shared with GP staff.
-            </p>
-            <ol class="nhsuk-contents-list__list">
-              <li class="nhsuk-contents-list__item"><a href="https://nhsd-confluence.digital.nhs.uk/display/NL/Provisioning+Journey+1+-+Responses%2C+errors+and+emails" target="_blank">Error table on Confluence</a></li>
-            </ol>
-
-            <h3>User journey</h3>
-            <p>
-              Allowing users to claim an NHS login account provisioned or uplifted by a GP.
-            </p>
-            <ol class="nhsuk-contents-list__list">
-              <li class="nhsuk-contents-list__item">
-                <a class="nhsuk-contents-list__link" href="discovery-2023/email/invite-new-account">New account set up email</a>
-              </li>
-              <li class="nhsuk-contents-list__item">
-                <a class="nhsuk-contents-list__link" href="discovery-2023/email/existing-account-uplift">Existing account uplift email </a>
-              </li>
-              <li class="nhsuk-contents-list__item">
-                <a class="nhsuk-contents-list__link" href="discovery-2023/email/existing-account-recovery">Existing account recovery email</a>
-              </li>
-              <li class="nhsuk-contents-list__item">
-                <a class="nhsuk-contents-list__link" href="discovery-2023/email/success-new-account">Succes new account</a>
-              </li>
-              <li class="nhsuk-contents-list__item">
-                <a class="nhsuk-contents-list__link" href="discovery-2023/email/success-uplift">Succes uplift (same as new account)</a>
-              </li>
-            </ol>
-            <details class="nhsuk-details">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  Errors
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-                <p>The same checks are done to see if a user has changed state since the GP checks (journey 1), these screens are shown to the user.</p>
-                <ul>
-                  <li><a href="discovery-2023/error/already-pyi-in-progress">Already has submitted a PYI application</a></li>
-                  <li><a href="discovery-2023/error/expired">Already uplifted (same as link expired)</a></li>
-                  <li><a href="discovery-2023/error/account-disabled">Account disabled</a></li>
-                  <li><a href="discovery-2023/error/account-disabled-dead-with-account">Account disabled - User dead with account</a></li>
-                  <li><a href="discovery-2023/error/account-disabled-dead-no-account">Account disabled - User dead without account</a></li>
-                  <li><a href="discovery-2023/error/already-account-email-p5">Duplicate email (P5)</a></li>
-                  <li><a href="discovery-2023/error/already-account-email-p9">Duplicate email (P9)</a></li>
-                  <li><a href="discovery-2023/error/already-account-p5?alreadyUser=multiple">Duplicate NHS number/ multiple P5 account exists</a></li>
-                  <li><a href="discovery-2023/error/already-account-p5?alreadyUser=one">Duplicate NHS number/ one P5 account exists</a></li>
-                  <li><a href="discovery-2023/error/email-link-lockout">Email link lockout</a></li>
-                  <!-- duplicate-account-p0 = duplicate-mobile-notification -->
-                  <li><a href="discovery-2023/error/generic">Generic error</a></li>
-                  <li><a href="discovery-2023/error/expired">Link expired (same as already uplifted)</a></li>
-                  <li><a href="discovery-2023/error/expiredotp">OTP expired</a></li>
-                  <li><a href="discovery-2023/error/lockoutotp">OTP lockout</a></li>
-                  <li><a href="discovery-2023/error/pds-no-match">PDS data doesn't match</a></li>
-                  <li><a href="discovery-2023/error/pds-mobile-change">PDS mobile no longer matches</a></li>
-                  <li><a href="discovery-2023/error/already-account-p9">P9 account already exists</a></li>
-                  <li><a href="discovery-2023/error/timeout">Timeout</a></li>
-                  <li><a href="discovery-2023/error/wrongotp">Wrong code entered</a></li>
-                  <li><a href="discovery-2023/error/wrong-password">Wrong password</a></li>
-                </ul>
-                <p>P5 only details error screens</p>
-                <ul>
-                  <li><a href="discovery-2023/error/duplicate-account-p5">Duplicate accounts - P5</a></li>
-                  <!-- duplicate-account-p5 = duplicate-nhsnumber-notification -->
-                  <li><a href="discovery-2023/error/partial-details-match">Some of these details are wrong</a></li>
-                  <li><a href="discovery-2023/error/wrong-details">Wrong details</a></li>
-                </ul>
-                <p>Other error triggers</p>
-                <ul>
-                  <li><a href="discovery-2023/email/existing-account-recovery">Email - Already set up duplicate email sent from duplicates page</a></li>
-                </ul>
-            
-              </div>
-            </details>
-            <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
-            <ul>
-              <li><a href="discovery-2023/research/march-2023" target="_blank">Research link</a></li>
-              <li><a href="https://nhsd-confluence.digital.nhs.uk/pages/viewpage.action?pageId=564757512" target="_blank">Confluence</a></li>
-              <li><a href="https://app.mural.co/invitation/mural/nhsdigital8118/1675178807706?sender=u6ebbd4fffc5f2b3022c14380&key=c4127b72-59f9-4a04-afe6-a59d177d3250" target="_blank">Mural service map</a></li>
-              <li><a href="https://app.mural.co/invitation/mural/nhsdigital8118/1677258706065?sender=u6ebbd4fffc5f2b3022c14380&key=8776c6f2-9ec7-49f9-8550-523cbd9c909a" target="_blank">Mural R&D</a></li>
-            </ul>
           </div>
         </div>
-
-        <div class="nhsuk-card">
-          <div class="nhsuk-card__content">
-            <h2 class="nhsuk-card__heading">
-              Previous work
-            </h2>
-          <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
-            <h2 class="nhsuk-u-visually-hidden">Provisioning</h2>
-            <p>Provisioning is split into two sections:</p>
-            <ol class="nhsuk-contents-list__list">
-              <li class="nhsuk-contents-list__item">
-                <a class="nhsuk-contents-list__link" href="universalinterface/index">Universal interface</a> - which allows trusted parties to create and ammend NHS login accounts via an API.
-              </li>
-              <li class="nhsuk-contents-list__item">
-                <a class="nhsuk-contents-list__link" href="createaccount/index">Create account</a> - which allows a user to claim an NHS login account created through the above interface.
-              </li>
-            </ol>
-            <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
-            <ul>
-              <li><a href="https://jira.digital.nhs.uk/secure/RapidBoard.jspa?rapidView=1886" target="_blank">Jira board</a></li>
-              <li><a href="https://confluence.digital.nhs.uk/display/NL/Provisioning+Interface" target="_blank">Confluence</a></li>
-              <li><a href="https://miro.com/app/board/o9J_kvKmy0w=/" target="_blank">Miro</a></li>
-              <li><a href="rdtracker/index" target="_blank">R&D tracker</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="nhsuk-grid-column-one-quarter">
-
-        </div>
-        </div>
       </div>
+    </div>
+  </section>
 
-      
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column">
+
+<div class="nhsuk-width-container app-width-container">
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <p>🔎</p>
+              <!--<h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="/research?research=true">Research hub</a></h2>-->
+              <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="#">Research hub</a></h2>
+              <p class="nhsuk-card__description">No context prototype links ready to be taken into research</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <p>🧑‍🎨</p>
+              <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="/index-in-r-d">In research and development</a></h2>
+              <p class="nhsuk-card__description">Prototypes for discovery and research rounds</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <p>🎉</p>
+              <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="/live">In live</a></h2>
+              <p class="nhsuk-card__description">View a prototype that matches the live NHS login service</p>
+            </div>
+          </div>
+        </li>
+        
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <p>🔗</p>
+              <h2 class="nhsuk-card__heading nhsuk-heading-m"><a href="/links">Useful links</a></h2>
+              <p class="nhsuk-card__description">Links to relevant documentation, including other prototypes, live environments and overviews</p>
+            </div>
+          </div>
+        </li>
 
 
+  
+    </div>
 
 
+    </div>
+  </div>
 
 {% endblock %}
