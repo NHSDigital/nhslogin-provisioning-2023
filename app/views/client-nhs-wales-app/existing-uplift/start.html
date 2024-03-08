@@ -1,0 +1,98 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+		Prove who you are
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+
+<div class="service-access-wrapper">
+	<ol class="service-access">
+
+
+{% if data.p0 === 'trueNow' %} 
+
+	<li class="service-access__item completed"> 
+		<h3 class="service-access__item__title ticked" style="font-size:18px">You have created an account</h3>
+		<div class="service-access__item__desc">	
+		</div>	
+	</li> 
+
+{% endif %}
+
+{% if data.p5 === 'trueNow' %} 
+
+	<li class="service-access__item completed"> 
+		<h3 class="service-access__item__title ticked" style="font-size:18px">We have matched you to your NHS record</h3>
+		<div class="service-access__item__desc">	
+		</div>	
+	</li>
+
+	<li class="service-access__item active">
+		<p class="service-access__item__title__text__leftandright"><b>Next step</b></p>
+		<h3 class="service-access__item__title">Prove who you are</h3>
+		<div class="service-access__item__desc">
+			<p>You will need to send a photo of your ID and a recording of your face. This extra security check ensures that only you have access to your health information.</p>
+			<p>You need to complete all the steps before we can save the details you have entered.</p>
+		</div>
+		<form action="triage/photo-id-question" method="POST">
+		<button class="nhsuk-button full-width" style="display:block; margin-bottom:0;">Continue</button>
+		</form>
+
+	</li>
+
+{% elif data.p5 === 'fail' %}
+
+<li class="service-access__item active">
+	<h3 class="service-access__item__title" style="font-size:18px; color: #768692;">You have entered your NHS details</h3>
+	
+	<hr style="margin-top:15px; margin-bottom:15px">
+
+
+	<p class="service-access__item__title__text__leftandright"><b>Next step</b></p>
+		<h3 class="service-access__item__title">Prove who you are</h3>
+		<div class="service-access__item__desc">
+			<p>You will need to send a photo of your ID and a recording of your face. This extra security check ensures that only you have access to your health information.</p>
+			<p>You need to complete all the steps before we can save the details you have entered.</p>
+		</div>
+		<form action="triage/photo-id-question" method="POST">
+		<button class="nhsuk-button full-width" style="display:block; margin-bottom:0;">Continue</button>
+		</form>
+
+</li>
+
+{% else %}
+
+
+<li class="service-access__item active">
+	<p class="service-access__item__title__text__leftandright"><b>Next step</b></p>
+	
+		<h3 class="service-access__item__title">Prove who you are</h3>
+		<div class="service-access__item__desc">
+			{% if data.p5 === 'trueBefore' or data.userIs === 'p5' %} 
+			<p>You will need to send a photo of your ID and a recording of your face. This extra security check ensures that only you have access to your health information.</p>
+			{% else %}
+			<p>You will need to send a photo of your ID and a recording of your face. This helps us match you to your NHS record and ensures that only you have access to your health information.</p>
+			{% endif %}
+			<p>You need to complete all the steps before we can save the details you have entered.</p>
+			</div>
+			<form action="triage/photo-id-question" method="POST">
+			<button class="nhsuk-button full-width" style="display:block; margin-bottom:0;">Continue</button>
+			</form>
+
+	</li>
+
+
+{% endif %}
+
+	</ol>
+
+</div>
+
+{% endblock %}
+{% block rightcol %}{% endblock %}

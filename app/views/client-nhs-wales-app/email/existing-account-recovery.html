@@ -1,0 +1,52 @@
+{% extends '../layouts/layout-email.html' %}
+
+{% block pageTitle %}
+Email: Account details reminder from NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p>
+        Subject: Account details reminder from NHS login
+      </p>
+
+      <hr>
+
+      <p class="nhsuk-body">
+        Dear {{ data.UserFirstName or 'Alex' }} {{ data.UserLastName or 'Taylor' }},
+      </p>
+
+      <p class="nhsuk-body">
+        Your GP asked us to remind you of the email address used to create your NHS login account. 
+      </p>
+      <p>
+        We have sent this email to the address you used to create your account. 
+      </p>
+
+      <h2 class="nhsuk-heading-m">Help with NHS login</h2>
+      <p>
+        To change your NHS login details and password or delete your NHS login if you no longer want to use it, visit: 
+        <br>
+        <a href="https://settings.login.nhs.uk/">https://settings.login.nhs.uk/</a>
+      </p>
+      <p>
+        If you have lost access to your mobile phone number you can visit: 
+        <br>
+        <a href="https://help.login.nhs.uk/manage/phonenumber/#you-have-lost-access-to-your-mobile-phone-number">https://help.login.nhs.uk/manage/phonenumber/#you-have-lost-access-to-your-mobile-phone-number</a>. 
+      </p>
+      <p>
+        If you have technical issues, visit the NHS login help centre: 
+        <br>
+        <a href="https://help.login.nhs.uk/">https://help.login.nhs.uk/</a>
+      </p>
+
+      <!--<p class="nhsuk-body">This invitation will expire in 7 days.</p>-->
+      
+      
+        <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email - this is an automated message</div>
+    </div>
+  </div>
+
+{% endblock %}

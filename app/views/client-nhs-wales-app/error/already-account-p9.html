@@ -1,0 +1,58 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+You already have an NHS login account
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>You already have an NHS login account</h1>
+
+        <p>
+          You can use your NHS login to access the <a href="https://www.nhsapp.service.nhs.uk/login">NHS App</a>.
+        </p>
+
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+
+            <h2 class="nhsuk-heading-s">Help with accessing your NHS login account</h2>
+            <p>
+              To change the email, password or phone number you use to log in visit <a href="https://settings.login.nhs.uk/">NHS login and security settings</a>.
+            </p>
+            <p>
+              If you have lost access to your phone number you can find help on the <a href="https://help.login.nhs.uk/">NHS login help centre</a>.
+            </p>
+          </div>
+        </div>
+
+        <p>Reference: <b>CID11005</b></p>
+
+
+    </div>  
+  </div>
+    </div>
+  </div>  
+{% endblock %}

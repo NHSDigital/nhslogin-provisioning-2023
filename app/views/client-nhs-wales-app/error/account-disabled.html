@@ -1,0 +1,46 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+There is a problem
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>You cannot use your NHS login</h1>  
+
+          <p>There is a problem that we are looking at.</p>
+
+          <p>You will not be able to use your NHS login until we have fixed the problem. This is to keep your health information secure.</p>
+
+          <p>Try again and then <a href="https://prototype-nhs-login-help-87153c4cb7ee.herokuapp.com/contact-form/contact">contact us</a> if you still cannot access your account.
+
+          <p>Reference: <strong>CID11002</strong></p>
+
+    </div>  
+  </div>
+    </div>
+  </div>  
+{% endblock %}

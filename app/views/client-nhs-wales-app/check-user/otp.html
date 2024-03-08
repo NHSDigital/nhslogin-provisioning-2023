@@ -1,0 +1,200 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Enter the 6 digit security code
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+  
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Do not remove error summary, it is hidden unless triggered by javascript -->
+      <!-- ERROR SUMMARY OPEN -->
+
+      <div id="errorSummary" style="display: none;" class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+            <li>
+              <a id="summaryErrorMessageContent" href="#securityCodes">Enter the security code</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- ERROR SUMMARY CLOSE -->
+    
+        <h1 class="nhsuk-heading-l">Enter the 6 digit security code</h1>
+        
+        {% if data.resendOTP === 'true' %}  
+        <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>You have been sent a new security code.</p>
+        </div>
+        {% endif %}
+
+        <p class="nhsuk-body">We have sent a text to <strong>•••••••8209</strong>.</p>
+        <p class="nhsuk-body">This is the phone number that is registered with your GP surgery.</p>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Not received your security code?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>When we are really busy, it may take a bit longer for your code to arrive.</p>
+            <p class="nhsuk-body">
+              <a href="login-enter-OTP?resendOTP=true">Send the security code again</a>.
+            </p>
+          </div>
+        </details>
+
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              I do not recognise this number
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>If you do not recognise this phone number or do not have access to your phone, you will need to update your records with your GP.</p>
+          </div>
+        </details>
+
+
+        <div class="nhsuk-u-padding-bottom-4"></div>
+           <!-- id= formGroup necessary for javascript. Do not remove -->
+        <div id="formGroup" class="nhsuk-form-group">
+          <label class="nhsuk-label" for="securityCodes">
+          Security code
+          </label>
+          <!-- span for error message do not remove- it is triggered by javascript and is otherwise hidden -->
+          <span id="errorMessageContainer" class="nhsuk-error-message" style="display: none;">
+            <span class="nhsuk-u-visually-hidden">Error:</span> <span id="errorMessageContent">Enter the security code</span>
+          </span>
+          <div class="nhsuk-hint" id="phoneOTPHint">
+            The code is 6 digits
+          </div>
+          <input class="nhsuk-input nhsuk-input--width-10" id="securityCodes" name="code" type="number" aria-describedby="securityCodes" autocomplete="off" pattern="[0-9]*" value="" style="margin-bottom: 8px;">
+        </div>
+
+        <!-- id= button--save added for javascript to run, do not remove -->
+        <button data-redirect="steps-finish-set-up" class="nhsuk-button full-width" type="submit" id="button--save">
+          Continue
+        </button>
+
+    </div>
+   
+  </div>
+
+  <script>
+    document.querySelector("#button--save").addEventListener("click",function(e) { 
+      var isValid = inlineValidation();
+  
+      if(!isValid) {
+        e.preventDefault();
+      }
+      else {
+        submitSpin();
+      }
+    })
+  
+    document.querySelector("#securityCodes").addEventListener("change",function(e) {
+      inlineValidation();
+    })
+  
+    function showErrorSummary(errorMessage) {
+      var errorSummary = document.querySelector("#errorSummary").style.display = "block";
+      if(errorMessage) {
+        var summaryErrorMessageContent = document.querySelector("#summaryErrorMessageContent").textContent = errorMessage;
+      }
+      else {
+        var summaryErrorMessageContent = document.querySelector("#summaryErrorMessageContent").textContent = "default error message";
+      }
+      
+    }
+  
+    function hideErrorSummary() {
+      var errorSummary = document.querySelector("#errorSummary").style.display = "none";
+    }
+  
+    function showInputError(errorMessage) {
+      var formGroup = document.querySelector("#formGroup").classList.add("nhsuk-form-group--error");
+      var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "block";
+      var inputError = document.querySelector("#securityCodes").classList.add("nhsuk-input--error");
+  
+      if(errorMessage) {
+        var errorMessageContent = document.querySelector("#errorMessageContent").textContent = errorMessage;
+      }
+  
+      else {
+        var errorMessageContent = document.querySelector("#errorMessageContent").textContent = "default error message";
+      }
+    }
+  
+    function hideInputError() {
+      var formGroup = document.querySelector("#formGroup").classList.remove("nhsuk-form-group--error");
+      var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "none";
+    }
+  
+    function inlineValidation() {
+      var inputValue = document.querySelector("#securityCodes").value;
+      
+      if(inputValue.length === 0) {
+        showErrorSummary("Enter the security code");
+        showInputError("Enter the security code");
+        return false;
+      }
+  
+      if(inputValue.length !== 6) {
+        showErrorSummary("Enter a valid security code");
+        showInputError("Enter a valid security code");
+        return false;
+      }
+  
+      if(inputValue !== "123456") {
+        showErrorSummary("Enter the correct security code");
+        showInputError("Enter the correct security code");
+        return false;
+      }
+  
+      
+  
+      return true;
+    }
+
+
+    // button spinner code
+
+    function submitSpin() {
+      var button = document.querySelector("#button--save")
+      button.setAttribute('disabled', 'disabled')
+      button.className += ' button--save'
+      setTimeout(function () {
+        window.location.href = button.dataset.redirect;
+      }, 2000)
+    }
+
+  </script>
+
+{% endblock %}
+
+
+ 
+

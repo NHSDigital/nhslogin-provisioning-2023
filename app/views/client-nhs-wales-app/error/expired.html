@@ -1,0 +1,57 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Your invitation to set up an NHS login has expired
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Your invitation to set up an NHS login has expired</h1>  
+
+
+      <p>This is because you:
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>received your invitation more than <strong>7 days ago</strong> and did not use it</li>
+        <li>have already used it to set up an NHS login</li>
+      </ul>
+      </p>
+      
+      <p>
+        If you want to set up an NHS login, you will need to ask your GP to send a new invitation.
+      </p>
+
+      <p>
+        If you have already set up an NHS login, you can use it to access the <a href="https://www.nhsapp.service.nhs.uk/login">NHS App</a>.
+      </p>
+
+      <p>Reference: <b>CID11013</b></p>
+
+
+    </div>  
+  </div>
+    </div>
+  </div>  
+{% endblock %}

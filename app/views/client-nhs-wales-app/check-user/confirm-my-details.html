@@ -1,0 +1,192 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Confirm your details
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-4">
+
+    <!-- ERROR SUMMARY OPEN -->
+    <!-- for error summary do not remove- it is triggered by javascript and is otherwise hidden -->
+
+<div id="errorSummary" style="display: none;" class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+  <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="nhsuk-error-summary__body">
+    <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+      <li>
+        <a id="summaryErrorMessageContent" href="#errorMessageContainer">Select an option</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ERROR SUMMARY CLOSE -->
+
+    <form method="post">
+    <!--<form method="post" action="password-set">-->
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend">
+            <h1 class="nhsuk-heading-l">
+              Confirm your details
+            </h1>
+          </legend>
+          <p class="nhsuk-body">
+            We found this NHS record using the information your GP surgery gave us.
+          </p>
+
+          <div class="nnhsuk-table-container">
+            <table class="nhsuk-table">
+            <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-summary-list__key">
+                Name
+              </td>
+              <td class="nhsuk-summary-list__value">
+                {{ data['firstName'] or 'Alex' }} {{ data['middleName'] }} {{ data['lastName'] or 'Taylor' }}
+              </td>
+          
+            </tr>
+          
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-summary-list__key">
+                Date of birth
+              </td>
+              <td class="nhsuk-summary-list__value">
+                {{ data['DoBDay'] or '10' }} {{ data['DoBMonth'] or 'June' }} {{ data['DoBYear'] or '1986' }}
+              </td>
+          
+            </tr>
+
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-summary-list__key">
+                NHS number
+              </td>
+              <td class="nhsuk-summary-list__value">
+                {{ data['enterNHSNumber'] or '••• ••• 3456' }}
+              </td>
+          
+            </tr>
+          
+          </tbody>
+          </table>
+          </div>
+
+          <!-- id= formGroup necessary for javascript. Do not remove -->
+          <div class="nhsuk-form-group" id="formGroup">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h2 class="nhsuk-heading-m">
+                  Are these your details?
+                </h2>
+              </legend>
+
+            <!-- ERROR MESSAGE SPAN OPEN: FOR INLINE VALIDATION -->
+            <!-- span for error message do not remove- it is triggered by javascript and is otherwise hidden -->
+            <span id="errorMessageContainer" class="nhsuk-error-message" style="display: none;" id="checkDetails">
+              <span class="nhsuk-u-visually-hidden">Error:</span> <span id="errorMessageContent">Select an option</span>
+            </span>
+            <!-- ERROR MESSSAGE SPAN CLOSE: FOR INLINE VALIDATION -->
+          
+              <div class="nhsuk-radios">
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="checkDetailsYes" name="checkDetails" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="checkDetailsYes">
+                    Yes, these are my details
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="checkDetailsNo" name="checkDetails" type="radio" value="no">
+                  <label class="nhsuk-label nhsuk-radios__label" for="checkDetailsNo">
+                    No, these are not my details
+                  </label>
+                </div>
+          
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="checkDetailsSome" name="checkDetails" type="radio" value="some">
+                  <label class="nhsuk-label nhsuk-radios__label" for="checkDetailsSome">
+                    These are my details, but some are wrong
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          
+          </div>
+
+      <!-- id= submitButton added for javascript to run, do not remove -->
+          <button class="nhsuk-button full-width nhsuk-u-margin-top-4" type="submit" id="submitButton">
+            Continue
+          </button>
+          
+
+        </fieldset>
+      </form>
+  </div>
+</div>
+
+<script>
+  document.querySelector("#submitButton").addEventListener("click",function(e) { 
+    var isValid = inlineValidation();
+
+    if(!isValid) {
+      e.preventDefault();
+    }
+  })
+
+  function showErrorSummary(errorMessage) {
+    var errorSummary = document.querySelector("#errorSummary").style.display = "block";
+    if(errorMessage) {
+      var summaryErrorMessageContent = document.querySelector("#summaryErrorMessageContent").textContent = errorMessage;
+    }
+    else {
+      var summaryErrorMessageContent = document.querySelector("#summaryErrorMessageContent").textContent = "default error message";
+    }
+    
+  }
+
+  function hideErrorSummary() {
+    var errorSummary = document.querySelector("#errorSummary").style.display = "none";
+  }
+
+  function showInputError(errorMessage) {
+    var formGroup = document.querySelector("#formGroup").classList.add("nhsuk-form-group--error");
+    var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "block";
+
+    if(errorMessage) {
+      var errorMessageContent = document.querySelector("#errorMessageContent").textContent = errorMessage;
+    }
+
+    else {
+      var errorMessageContent = document.querySelector("#errorMessageContent").textContent = "default error message";
+    }
+  }
+
+  function hideInputError() {
+    var formGroup = document.querySelector("#formGroup").classList.remove("nhsuk-form-group--error");
+    var errorMessageContainer = document.querySelector("#errorMessageContainer").style.display = "none";
+  }
+
+  function inlineValidation() {
+    var radioValue1 = document.querySelector("#checkDetailsYes").checked;
+    var radioValue2 = document.querySelector("#checkDetailsNo").checked;
+    var radioValue3 = document.querySelector("#checkDetailsSome").checked;
+    
+    if(radioValue1 === false &&  radioValue2 === false && radioValue3 === false) {
+      showErrorSummary("Select an option");
+      showInputError("Select an option");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+{% endblock %}

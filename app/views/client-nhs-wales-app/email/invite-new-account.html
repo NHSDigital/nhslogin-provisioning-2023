@@ -1,0 +1,67 @@
+{% extends '../layouts/layout-email.html' %}
+
+{% block pageTitle %}
+Email: Invite to set up your NHS login
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <p>
+        Subject: Invite to set up your NHS login
+      </p>
+
+      <hr>
+      
+      <p class="nhsuk-body">
+        Dear {{ data.UserFirstName or 'Alex' }} {{ data.UserLastName or 'Taylor' }},
+      </p>
+      
+      <p class="nhsuk-body">
+        Your GP surgery has recommended that you use the <strong>NHS App</strong>. To access it you will need an NHS login account.
+      </p>
+
+      <p class="nhsuk-body">This means you can do things like: 
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>
+            view your GP health record 
+          </li>
+          <li>
+            manage appointments 
+          </li>
+          <li>
+            order repeat prescriptions 
+          </li>         
+        </ul>
+      </p>
+
+      <h2 class="nhsuk-heading-m">
+        To finish setting up your account
+      </h2>
+
+      <p class="nhsuk-body">
+        We need to send a 6 digit security code to the mobile phone number you used to register with your GP.
+      </p>
+
+      <p class="nhsuk-body">You will also need to create a password and then confirm the details we have for you are correct.</p>
+
+      <p class="nhsuk-body">This invitation will expire in <strong>7 days</strong>.</p>
+
+      {% if data.error === 'trueNow' %} 
+
+      <a href="../check-user/spinner-set-up?error=trueNow" target="_blank" class="nhsuk-button">Finish setting up your NHS login</a>
+      <p><a href="../check-user/spinner-set-up?error=trueNow" target="_blank">https://provisioning.login.nhs.uk/finish-set-up/</a></p>
+
+      {% else %}
+
+      <a href="../check-user/spinner-set-up?journey=new" target="_blank" class="nhsuk-button">Finish setting up your NHS login</a>
+      <p><a href="../check-user/spinner-set-up?journey=new" target="_blank">https://provisioning.login.nhs.uk/finish-set-up/</a></p>
+      
+      {% endif %}
+      <div class="nhsuk-hint" id="example-with-hint-text-hint">Please do not reply to this email - this is an automated message</div>
+
+    </div>
+  </div>
+
+{% endblock %}

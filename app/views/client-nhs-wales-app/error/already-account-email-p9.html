@@ -1,0 +1,54 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+There is already an NHS login account with this email
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/breadcrumbs -->
+{#
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+#}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>There is already an NHS login account with this email</h1>  
+
+            <p>
+              You will need to contact your GP surgery about sending another request to a different email.
+            </p>
+      
+            <p>
+              This is because each person can only have one NHS login account.
+            </p>
+
+            <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>If you cannot remember creating an NHS login account, <a href="https://prototype-nhs-login-help-87153c4cb7ee.herokuapp.com/">visit the NHS login help centre for further help</a>.</p>
+            </div>
+
+            <p>Reference: <b>CID11004</b></p>
+
+
+    </div>  
+  </div>
+    </div>
+  </div>  
+{% endblock %}
