@@ -129,6 +129,22 @@ router.post('/discovery-2023/check-user/confirm-my-details', function (req, res)
   }
 })
 
+// Routes for confirm my details - NHS Wales App version - radios
+
+router.post('/client-nhs-wales-app/check-user/confirm-my-details', function (req, res){
+  var confirmDetails = req.session.data['checkDetails']
+  var journey = req.session.data['journey']
+
+  if (confirmDetails == 'yes'){
+    res.redirect('/client-nhs-wales-app/existing-uplift/login-enter-password')
+    
+  }else if (confirmDetails == 'no'){
+    res.redirect('/client-nhs-wales-app/error/wrong-details')
+  }else{
+    res.redirect('/client-nhs-wales-app/error/partial-details-match')
+  }
+})
+
 
 
 // Add your routes here - above the module.exports line
