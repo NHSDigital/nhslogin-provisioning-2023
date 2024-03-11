@@ -17,26 +17,10 @@ Email: Finish setting up your NHS login
       <p class="nhsuk-body">
         Dear {{ data.UserFirstName or 'Alex' }} {{ data.UserLastName or 'Taylor' }},
       </p>
-
-      {% if data.contentVersion === 'A' %} 
       
       <p class="nhsuk-body">
-        You need to finish setting up your NHS login. This means you will be able use the NHS App (or NHS Wales App if you live in Wales). 
+        You need to finish setting up your NHS login. This means you will be able use the <strong>NHS Wales App</strong>. 
       </p>
-
-      {% elif data.contentVersion === 'B' %} 
-      
-      <p class="nhsuk-body">
-        We are inviting you to finish setting up your NHS login. This means you will be able use the NHS App (or NHS Wales App if you live in Wales).
-      </p>
-
-      {% else %} 
-      
-      <p class="nhsuk-body">
-        Your GP surgery has recommended that you use the <strong>NHS Wales App</strong>. To access it you will need an NHS login account.
-      </p>
-
-      {% endif %}
 
       <p class="nhsuk-body">This means you can do things like: 
 
@@ -58,7 +42,7 @@ Email: Finish setting up your NHS login
       </h2>
 
       <p class="nhsuk-body">
-        We need to send a 6 digit security code to the mobile phone number.
+        We will send a 6 digit code to your mobile phone number.
       </p>
 
       <p class="nhsuk-body">

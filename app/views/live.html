@@ -57,9 +57,9 @@
       <li class="service-access__item active"> 
 
         
-        <h3>Update 2024 / NHS Wales App service</h3>
+        <h3>Update 2024 / NHS Wales App </h3>
 
-        <div class="informative-palegrey">User journey - NHS App Wales login uplift</div><br>
+        <div class="informative-palegrey">User journey - NHS Wales App login uplift</div><br>
             <p style="font-size:14px;">
               NHS App after doing POL using provisioning to uplift their NHS login account to highest level.
             </p>
@@ -71,13 +71,34 @@
                 <a class="nhsuk-contents-list__link" href="client-nhs-wales-app/email/existing-account-recovery">Existing account recovery email (edge case)</a>
               </li>
               <li class="nhsuk-contents-list__item">
-                <a class="nhsuk-contents-list__link" href="client-nhs-wales-app/email/success-uplift">Succes uplift</a>
+                <a class="nhsuk-contents-list__link" href="client-nhs-wales-app/email/success-uplift">Success uplift</a>
+              </li>
+            </ol>
+
+            <div class="nhsuk-details__text">
+              <div class="informative-palegrey" style="font-size:16px; font-weight: bold;">Updated errors</div><br>
+
+              <ol class="nhsuk-contents-list__list" style="font-size:14px;">
+                <li><a href="client-nhs-wales-app/error/already-account-p5?alreadyUser=multiple">Duplicate NHS number/ multiple P5 account exists</a></li>
+                <li><a href="client-nhs-wales-app/error/already-account-p5?alreadyUser=one">Duplicate NHS number/ one P5 account exists</a></li>
+                <li><a href="client-nhs-wales-app/error/expired">Link expired (same as already uplifted)</a></li>
+                <li><a href="client-nhs-wales-app/error/already-account-p9">P9 account already exists</a></li>
+              </ol>
+
+            </div><br>
+
+            <p style="font-size:16px; font-weight: bold;">
+             POL interrupt screen back to NHS Wales App
+            </p>
+            <ol class="nhsuk-contents-list__list" style="font-size:14px;">
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="client-nhs-wales-app/pol/pol-interrupt">POL interrupt</a>
               </li>
             </ol>
 
 
         
-        <h3>Discovery 2023 / NHS App main service</h3>
+        <h3>Discovery 2023 / NHS App prescribed</h3>
 
         <div class="informative-palegrey">GP checks</div><br>
         <p style="font-size:14px;">
@@ -109,8 +130,9 @@
               </li>
             </ol>
 
-            <div class="informative-palegrey">Errors</div><br>
+            
               <div class="nhsuk-details__text">
+                <div class="informative-palegrey" style="font-size:16px; font-weight: bold;">Errors</div><br>
                 <p style="font-size:14px;">The same checks are done to see if a user has changed state since the GP checks (journey 1), these screens are shown to the user.</p>
                 <ul style="font-size:14px;">
                   <li><a href="discovery-2023/error/already-pyi-in-progress">Already has submitted a PYI application</a></li>
@@ -137,7 +159,6 @@
                 </ul>
                 <p style="font-size:14px;">P5 only details error screens</p>
                 <ul style="font-size:14px;">
-                  <li><a href="discovery-2023/error/duplicate-account-p5">Duplicate accounts - P5</a></li>
                   <!-- duplicate-account-p5 = duplicate-nhsnumber-notification -->
                   <li><a href="discovery-2023/error/partial-details-match">Some of these details are wrong</a></li>
                   <li><a href="discovery-2023/error/wrong-details">Wrong details</a></li>
