@@ -46,7 +46,7 @@
   margin-bottom: 0;
   /// display: block;
   .completed & {
-    color: $color_nhsuk-grey-2;
+    color: $color_nhsuk-grey-1;
   }
 
 .service-access__item__title {
@@ -58,7 +58,7 @@
 
   &.ticked {
     position: relative;
-    color: $color_nhsuk-grey-2;
+    color: $color_nhsuk-grey-1;
     &::before,
     &::after {
       content: "";
