@@ -31,9 +31,19 @@ You already have an NHS login account
 
       <h1>You already have an NHS login account</h1>
 
-        <p>
-          Use the email address linked to this account to access the <a href="https://app.nhs.wales/login">NHS Wales App</a>.
-        </p>
+      {% if data.clientId === 'Wales' %}
+
+      <p>
+        Use the email address linked to this account to access the <a href="https://app.nhs.wales/login">NHS Wales App</a>.
+      </p>
+
+      {% else %}
+
+      <p>
+        To use the website or app you were trying to access, use the email address you entered to set up your NHS login.
+      </p>
+
+      {% endif %}
 
         <div class="nhsuk-card">
           <div class="nhsuk-card__content">

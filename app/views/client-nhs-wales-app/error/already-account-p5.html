@@ -33,11 +33,20 @@ There is already an NHS login account linked to this NHS number
 
             <p>
               An account was set up using this NHS number, with a different email address.
-            </p>
-      
-            <p>
-              Use this email address to access the <a href="https://app.nhs.wales/login">NHS Wales App</a>.
-            </p>
+
+              {% if data.clientId === 'Wales' %}
+        
+              <p>
+                Use the email address linked to this account to access the <a href="https://app.nhs.wales/login">NHS Wales App</a>.
+              </p>
+        
+              {% else %}
+        
+              <p>
+                To use the website or app you were trying to access, use the email address you entered to set up your NHS login.
+              </p>
+        
+              {% endif %}
 
             <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
               <span class="nhsuk-u-visually-hidden">Information: </span>
