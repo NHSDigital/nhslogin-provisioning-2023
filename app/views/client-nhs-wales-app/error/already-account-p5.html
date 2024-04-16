@@ -35,14 +35,22 @@ There is already an NHS login account linked to this NHS number
               An account was set up using this NHS number, with a different email address.
             </p>
 
+            <!-- Wales content
+
             <p>
               <a href="https://app.nhs.wales/login">Go back to the NHS Wales App</a> and use the email address you entered to set up your NHS login.
+            </p>
+
+            -->
+
+            <p>
+              To use the website or app you were trying to access, use the email address you entered to set up your NHS login.
             </p>
 
             <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
               <span class="nhsuk-u-visually-hidden">Information: </span>
               <p>If you cannot remember creating an NHS login account, <a href="https://prototype-nhs-login-help-87153c4cb7ee.herokuapp.com/">visit the NHS login help centre for further help</a>.</p>
-            </div>
+            
 
             {% if data.alreadyUser === 'multiple' %} <!-- Multiple accounts with the same NHS No -->
 
